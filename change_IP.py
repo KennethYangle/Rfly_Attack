@@ -6,7 +6,7 @@ import glob, re, sys
 nargs = len(sys.argv)
 # print(sys.argv)
 if nargs != 2:
-    print("Usage: python3 change_IP.py IP\nFor example: python3 change_IP.py 192.168.1.52")
+    print("Usage: python3 change_IP.py IP\nFor example: python3 change_IP.py 192.168.110.145")
     sys.exit()
 
 suffix = ["py", "sh", "launch", "bat"]

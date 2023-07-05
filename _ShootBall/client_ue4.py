@@ -24,7 +24,7 @@ time.sleep(0.5)
 # VisionCaptureApi 中的配置函数
 vis.jsonLoad() # 加载Config.json中的传感器配置文件
 
-vis.RemotSendIP = '192.168.1.11'
+# vis.RemotSendIP = '192.168.110.145'
 # 注意，手动修改RemotSendIP的值，可以将图片发送到远端Linux电脑的IP地址
 # 如果不修改这个值，那么发送的IP地址为json文件中SendProtocol[1:4]定义的IP
 # 图片的发送端口，为json中SendProtocol[5]定义好的。

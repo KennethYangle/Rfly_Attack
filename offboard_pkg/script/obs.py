@@ -287,20 +287,20 @@ if __name__=="__main__":
         if MODE == "Simulation":
             sphere_control(cnt, ch8==1)
             
-        if ch8 == 0:
-            if current_state.mode == "OFFBOARD":
-                resp1 = set_mode_client(0, "POSCTL")	# (uint8 base_mode, string custom_mode)
-            if cnt % 10 == 0:
-                print("Enter MANUAL mode")
-            Initial_pos = mav_pos
-            rate.sleep()
-            continue
-        else:
-            if current_state.mode != "OFFBOARD":
-                resp1 = set_mode_client( 0,offb_set_mode.custom_mode )
-                if resp1.mode_sent:
-                    print("Offboard enabled")
-                last_request = rospy.Time.now()
+            if ch8 == 0:
+                if current_state.mode == "OFFBOARD":
+                    resp1 = set_mode_client(0, "POSCTL")	# (uint8 base_mode, string custom_mode)
+                if cnt % 10 == 0:
+                    print("Enter MANUAL mode")
+                Initial_pos = mav_pos
+                rate.sleep()
+                continue
+            else:
+                if current_state.mode != "OFFBOARD":
+                    resp1 = set_mode_client( 0,offb_set_mode.custom_mode )
+                    if resp1.mode_sent:
+                        print("Offboard enabled")
+                    last_request = rospy.Time.now()
         
         pos_info = {"mav_pos": mav_pos, "mav_vel": mav_vel, "mav_R": mav_R, "R_bc": np.array([[0,0,1], [1,0,0], [0,1,0]]), 
                     "mav_original_angle": mav_original_angle, "Initial_pos": Initial_pos}

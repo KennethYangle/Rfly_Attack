@@ -3,7 +3,7 @@
    <node pkg="rflysim_sensor_rospkg" type="image_receive_newprotocol.py" name="depth_receive_newprotocol" output="screen">
      <param name="port" value="9992" />
      <!-- IP地址为NX/接收端的局域网IP -->
-     <param name="IP" value="192.168.1.3" />
+     <param name="IP" value="192.168.110.145" />
      <param name="pub_topic_name" value="/depth_image_topic" />
      <param name="type" value="depth"/>
      <param name="frame_id" value="camera_depth_optical_frame"/>

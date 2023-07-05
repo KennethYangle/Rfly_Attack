@@ -7,7 +7,7 @@ import socket
 import time
 
 class RClient:
-    def __init__(self, HOST='192.168.1.52', PORT=63000):
+    def __init__(self, HOST='192.168.110.145', PORT=63000):
         self.D_cmd = {
             "strat":b"cmd01",
             "stop":b"cmd02",

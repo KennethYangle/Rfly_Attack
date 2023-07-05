@@ -3,7 +3,7 @@
    <node pkg="rflysim_sensor_rospkg" type="image_receive.py" name="gray_receive" output="screen" launch-prefix="gnome-terminal --tab --">
      <param name="port" value="9997" />
      <!-- IP地址为NX/接收端的局域网IP -->
-     <param name="IP" value="192.168.10.116" />
+     <param name="IP" value="192.168.110.145" />
      <param name="pub_topic_name" value="/gray_image_topic" />
      <param name="type" value="gray"/>
      <param name="frame_id" value="camera_infra1_optical_frame"/>
