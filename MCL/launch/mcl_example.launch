@@ -1,0 +1,5 @@
+<launch>
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find MCL)/config/rosconsole.config"/>
+  <node name="mcl_example" pkg="MCL" type="mcl_example" output="screen" />
+  <node pkg="rosbag" type="play" name="bag_play" args="$(find MCL)/../../dataset/15.14flyballoon/fly_high_2023-04-28-11-21-08.bag -s 65 --duration=10" />
+</launch>

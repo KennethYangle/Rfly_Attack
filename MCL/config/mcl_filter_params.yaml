@@ -1,0 +1,23 @@
+particle_num: 1000
+
+MCL_params:
+  alpha_1: 0.001   # uncertainty weight
+  alpha_2: 0.001
+  alpha_3: 10.0
+  alpha_4: 0.01
+  init_pos_conv: 2.0
+  init_orient_conv: 0.1
+  sigma_p: 0.3
+
+target_pos:
+  target_x: 8.0
+  target_y: -35.0
+  target_z: 12.0
+
+camera:
+  img_width: 720
+  img_height: 1280
+  img_f: 370
+
+Debug:
+  is_show_image: true
