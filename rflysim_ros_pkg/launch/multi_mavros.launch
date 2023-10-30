@@ -1,6 +1,6 @@
 <launch>
-   <!-- <arg name="IP" value="192.168.1.52" /> -->
-   <arg name="IP" value="192.168.1.52" />
+   <!-- <arg name="IP" value="192.168.110.145" /> -->
+   <arg name="IP" value="192.168.110.145" />
    <group ns="drone_1">
       <arg name="ID" value="1"/>
       <arg name="fcu_url" default="udp://:20101@$(arg IP):20100"/>

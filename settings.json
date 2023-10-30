@@ -1,7 +1,7 @@
 {
     "Docs": "settings.md",
-    "MODE": "RealFlight",
-    "IsRC": true,
+    "MODE": "Simulation",
+    "IsRC": false,
     "UseEKF": false,
     "car_velocity": 1,
     "follow_mode": 0,

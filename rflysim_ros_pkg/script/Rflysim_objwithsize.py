@@ -28,13 +28,13 @@ def sendUE4Pos(copterID, vehicleType, MotorRPMSMean, PosE, AngEuler, udp, window
             buf = struct.pack("3i7f", 1234567890, copterID, vehicleType, MotorRPMSMean,
                               PosE[0], PosE[1], PosE[2], AngEuler[0], AngEuler[1], AngEuler[2])
             socket = udp_socket()
-            # socket.sendto(buf, ('192.168.1.52', 20010+i))
+            # socket.sendto(buf, ('192.168.110.145', 20010+i))
             socket.sendto(buf, (udp, 20010+i))
     else:
         buf = struct.pack("3i7f", 1234567890, copterID, vehicleType, MotorRPMSMean,
                           PosE[0], PosE[1], PosE[2], AngEuler[0], AngEuler[1], AngEuler[2])
         socket = udp_socket()
-        # socket.sendto(buf, ('192.168.1.52', 20010+windowID))
+        # socket.sendto(buf, ('192.168.110.145', 20010+windowID))
         socket.sendto(buf, (udp, 20010+windowID))
 
 def sendUE4PosScale(copterID, vehicleType, MotorRPMSMean, PosE, AngEuler, Scale,udp, windowID=-1):
@@ -43,13 +43,13 @@ def sendUE4PosScale(copterID, vehicleType, MotorRPMSMean, PosE, AngEuler, Scale,
             buf = struct.pack("3i10f", 1234567890, copterID, vehicleType, MotorRPMSMean,
                               PosE[0], PosE[1], PosE[2], AngEuler[0], AngEuler[1], AngEuler[2],Scale[0],Scale[1],Scale[2])
             socket = udp_socket()
-            # socket.sendto(buf, ('192.168.1.52', 20010+i))
+            # socket.sendto(buf, ('192.168.110.145', 20010+i))
             socket.sendto(buf, (udp, 20010+i))
     else:
         buf = struct.pack("3i10f", 1234567890, copterID, vehicleType, MotorRPMSMean,
                           PosE[0], PosE[1], PosE[2], AngEuler[0], AngEuler[1], AngEuler[2],Scale[0],Scale[1],Scale[2])
         socket = udp_socket()
-        # socket.sendto(buf, ('192.168.1.52', 20010+windowID))
+        # socket.sendto(buf, ('192.168.110.145', 20010+windowID))
         socket.sendto(buf, (udp, 20010+windowID))
 
 obj_pos = [0, 0, 0]
