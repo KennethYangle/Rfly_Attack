@@ -18,7 +18,8 @@ plt.rcParams.update(params)
 style_dict = get_line_style()
 
 
-figsize=set_size(70, hw_ratio=0.8)
+# figsize=set_size(70, hw_ratio=0.8)
+figsize=set_size(140, hw_ratio=0.35)
 fig, ax = plt.subplots(1, 1, figsize=figsize)
 ax = plt.axes(projection='3d')
 f = open(os.path.join("../datas","datas_30Hz_ekf.pkl"), 'r')
@@ -65,8 +66,13 @@ ax.set_zlabel('z (m)')
 new_ticks = np.linspace(-10, 10, 5)
 ax.set_xticks(new_ticks)
 ax.set_xlim(-10, 10)
+new_ticks = np.linspace(-1, 25, 9)
+ax.set_yticks(new_ticks)
 ax.set_ylim(-1, 25)
 ax.set_zlim(-1, 5)
+# ax.axes.xaxis.set_ticklabels([])
+# ax.axes.yaxis.set_ticklabels([])
+# ax.axes.zaxis.set_ticklabels([])
 # plt.legend(('Interceptor', 'Target'), frameon=False, loc='upper center', ncol=2, handlelength=2)    # 图例
 
 # 保存图片

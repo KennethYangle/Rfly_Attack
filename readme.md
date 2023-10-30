@@ -93,6 +93,13 @@ python 1-draw_trajectory.py
 ```
 ![](./output/trajectory.svg)
 
+### 1.1 The trajectory of the interceptor and the target when the image measurement is directly used at 30Hz.
+画50组实验的全体轨迹图，使用`datas_30Hz.pkl`
+```
+python 1-1-draw_trajectory-directly.py
+```
+![](./output/trajectory-directly.svg)
+
 ## 2. Boxplots of control error for EKF 
 画30hz下有无EKF的误差对比箱线图
 ```
@@ -142,6 +149,11 @@ CEP_30Hz_ekf: 0.39116126392
 python 6-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/main_node-3-stdout.log mav_pos -p -t "0 10"
 ```
 ![](./output/plotxy-sim.svg)
+### 6.1 trajectory-3D
+```
+python 6-1-plot_data-3D.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/main_node-3-stdout.log mav_pos -p -t "0 10"
+```
+![](./output/plotxy-sim-3D.svg)
 
 ## 7. Results for HITL simulation. (b) image coordinates
 画仿真中原始和滤波后图像坐标随时间变化图
@@ -150,6 +162,24 @@ python 6-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/main_node-3-
 python 7-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/ekf_node-2-stdout.log IMG_x ekf_x IMG_y ekf_y -t "10 37.5" --subplot 2
 ```
 ![](./output/subplot-sim.svg)
+### 7.2 image coordinates
+画仿真中滤波后图像坐标游走图
+```
+python 7-2-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/ekf_node-2-stdout.log ekf_x -t "20 36" --plotxy
+```
+![](./output/img_xy-sim.svg)
+### 7.5 Attitude
+画仿真中姿态随时间变化图
+```
+python 7-5-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/ekf_node-2-stdout.log mav_q -t "10 37.5" -s
+```
+![](./output/attitude-sim.svg)
+### 7.6 Attitude
+画仿真中姿态随时间变化图
+```
+python 7-6-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/ekf_node-2-stdout.log mav_q -t "30.2 32.25" -s
+```
+![](./output/attitude-local-sim.svg)
 
 ## 8. Results for HITL simulation. (c) local image coordinates
 画仿真中原始和滤波后图像坐标随时间变化图局部放大图
@@ -168,22 +198,45 @@ python 8-plot_data.py ../datas/377504aa-b91c-11eb-9cde-000c29e163c9/ekf_node-2-s
 python 9-plot_data.py ../datas/20210521_172502_sim.log mav_pos -t "51 61" -p
 ```
 ![](./output/plotxy-real.svg)
+### 9.1 trajectory-3D
+```
+python 9-1-plot_data-3D.py ../datas/20210521_172502_sim.log mav_pos -t "51 61" -p
+```
+![](./output/plotxy-real-3D.svg)
 
-## 10. Results for HITL simulation. (b) image coordinates
+## 10. Results for real flight. (b) image coordinates
 画实飞静态目标中原始和滤波后图像坐标随时间变化图
 ```
 # python plot_data.py ../datas/20210521_172502_sim.log IMG_x ekf_x IMG_y ekf_y -t "2 68.4" --subplot 2
 python 10-plot_data.py ../datas/20210521_172502_sim.log IMG_x ekf_x IMG_y ekf_y -t "20 68.4" --subplot 2
 ```
 ![](./output/subplot-real.svg)
+### 10.2 image coordinates
+画仿真中滤波后图像坐标游走图
+```
+python 10-2-plot_data.py ../datas/20210521_172502_sim.log ekf_x -t "20 68.4" --plotxy
+```
+![](./output/img_xy-real.svg)
+## 10.5 Attitude
+画实飞静态目标中姿态随时间变化图
+```
+python 10-5-plot_data.py ../datas/20210521_172502_sim.log mav_q -t "20 68.4" -s
+```
+![](./output/attitude-real.svg)
+### 10.6 Local Attitude
+画仿真中姿态随时间变化图
+```
+python 10-6-plot_data.py ../datas/20210521_172502_sim.log mav_q -t "64 69" -s
+```
+![](./output/attitude-local-real.svg)
 
 ## 11. Results for HITL simulation. (c) local image coordinates
 画实飞静态目标中原始和滤波后图像坐标随时间变化图局部放大图
 ```
 # python plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "36.5 41"
 # python plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "62.5 68.4"
-python 11-plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "36.5 41"
-python 11-plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "62.5 68.4"
+python 11-plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "36.5 39"
+python 11-plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "65 68"
 ```
 ![](./output/local-real-1.svg)
 ![](./output/local-real-2.svg)
@@ -199,14 +252,38 @@ python 11-plot_data.py ../datas/20210521_172502_sim.log IMG_y ekf_y -t "62.5 68.
 python 12-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log mav_pos -t "5 15" -p
 ```
 ![](./output/plotxy-real-moving.svg)
+### 12.1 trajectory-3D
+画实飞动态目标中相对目标的全局坐标轨迹图
+```
+python 12-1-plot_data-3D.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log mav_pos -t "5 15" -p
+```
+![](./output/plotxy-real-moving-3D.svg)
 
-## 13. Results for HITL simulation. (b) image coordinates
+## 13. Results for real flight moving. (b) image coordinates
 画实飞动态目标中原始和滤波后图像坐标随时间变化图
 ```
 # python 13-plot_data.py ../datas/2eb00a9e-ccc1-11ed-9ff8-c6766eff689d/ekf_node-1-stdout.log IMG_x ekf_x IMG_y ekf_y -t "278 295" --subplot 2
 python 13-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log IMG_x ekf_x IMG_y ekf_y -t "5 13.2" --subplot 2
 ```
 ![](./output/subplot-real-moving.svg)
+### 13.2 image coordinates
+画仿真中滤波后图像坐标游走图
+```
+python 13-2-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log ekf_x -t "5 13.2" --plotxy
+```
+![](./output/img_xy-real-moving.svg)
+## 13.5 Attitude
+画实飞动态目标中姿态随时间变化图
+```
+python 13-5-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log mav_q -t "5 13.2" -s
+```
+![](./output/attitude-real-moving.svg)
+### 13.6 Local Attitude
+画仿真中姿态随时间变化图
+```
+python 13-6-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-stdout.log mav_q -t "12.6 13.2" -s
+```
+![](./output/attitude-local-real-moving.svg)
 
 ## 14. Results for HITL simulation. (c) local image coordinates
 画实飞静态目标中原始和滤波后图像坐标随时间变化图局部放大图
@@ -218,6 +295,15 @@ python 14-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-
 ```
 ![](./output/local-real-moving-1.svg)
 ![](./output/local-real-moving-2.svg)
+
+## 15. Compare with previous method (IBVS)
+与IBVS对比
+### 15.1 全部轨迹图
+画50组实验的全体轨迹图，使用`datas_10Hz.pkl`
+```
+python 15-1-draw_trajectory-previous.py
+```
+![](./output/trajectory-previous.svg)
 
 # 三、更多
 ## 1. 总体绘图逻辑

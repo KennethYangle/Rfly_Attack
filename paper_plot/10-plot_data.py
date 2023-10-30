@@ -40,11 +40,14 @@ def main(args):
     time = 0
     index = [[] for v in range(nvar)]
     data_len = [0 for v in range(nvar)]
-    for line in lines:
-        for v in range(nvar):
+    for v in range(nvar):
+        for line in lines:
             if line.startswith("time:"):
                 tmp = [float(a) for a in re.findall(r'-?\d+\.?\d*e?[-+]?\d*', line)]
-                time = tmp[0]
+                if v == 0: 
+                    time = tmp[0] + 0.05
+                else:
+                    time = tmp[0]
             if time < tmin or time > tmax:
                 continue
             if line.startswith(args.variable[v]+":"):

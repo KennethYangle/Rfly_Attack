@@ -44,7 +44,7 @@ def get_line_style():
     return style_dict
 
 # 来自：https://jwalton.info/Embed-Publication-Matplotlib-Latex/
-def set_size(width, fraction=1, hw_ratio=0.618):
+def set_size(width, fraction=1, hw_ratio=0.618, height=None):
     """Set figure dimensions to avoid scaling in LaTeX.
 
     Parameters
@@ -72,6 +72,10 @@ def set_size(width, fraction=1, hw_ratio=0.618):
     fig_width_in = fig_width_mm * inches_per_mm
     # Figure height in inches
     fig_height_in = fig_width_in * hw_ratio
+
+    if height is not None:
+        fig_height_mm = height * fraction
+        fig_height_in = fig_height_mm * inches_per_mm
 
     fig_dim = (fig_width_in, fig_height_in)
 

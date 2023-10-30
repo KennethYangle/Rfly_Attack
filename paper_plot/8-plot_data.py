@@ -40,11 +40,14 @@ def main(args):
     time = 0
     index = [[] for v in range(nvar)]
     data_len = [0 for v in range(nvar)]
-    for line in lines:
-        for v in range(nvar):
+    for v in range(nvar):
+        for line in lines:
             if line.startswith("time:"):
                 tmp = [float(a) for a in re.findall(r'-?\d+\.?\d*e?[-+]?\d*', line)]
-                time = tmp[0]
+                if v == 0: 
+                    time = tmp[0] + 0.05
+                else:
+                    time = tmp[0]
             if time < tmin or time > tmax:
                 continue
             if line.startswith(args.variable[v]+":"):
@@ -124,8 +127,10 @@ def main(args):
                     ax.plot(index[v], datas[v][i], label="{}[{}]".format(args.variable[v], i), linewidth=1)
                 else:
                     ax.plot(index[v], datas[v][0], label="{}[{}]".format(args.variable[v], 0), linewidth=1)
-        fig.savefig("../output/local-sim-2.svg", format='svg', bbox_inches='tight')
-        svg_to_emf("../output/local-sim-2.svg")
+        # ax.plot([a+0.05 for a in index[0]], datas[0][0], label="{}[{}]".format(args.variable[0], 0), linewidth=1)
+        # ax.plot(index[1], datas[1][0], label="{}[{}]".format(args.variable[1], 0), linewidth=1)
+        fig.savefig("../output/local-sim-1.svg", format='svg', bbox_inches='tight')
+        svg_to_emf("../output/local-sim-1.svg")
         plt.show()
 
 

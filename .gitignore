@@ -16,6 +16,7 @@ data.mat
 *.bag
 *.bmp
 *.png
+*.emf
 # *.pkl
 # *.log
 
