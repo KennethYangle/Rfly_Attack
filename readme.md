@@ -138,7 +138,7 @@ CEP_50Hz: 0.4568409922
 python 5-scatter_with_ekf.py
 ```
 ![](./output/scatter_with_30Hz_ekf.svg)
-CEP_30Hz_ekf: 0.39116126392
+CEP_30Hz_ekf: 0.33216126392
 
 
 **图6-11在`analyse\`路径下运行。**
@@ -304,6 +304,40 @@ python 14-plot_data.py ../datas/207692ec-eb14-11ed-94db-000c2992733c/ekf_node-1-
 python 15-1-draw_trajectory-previous.py
 ```
 ![](./output/trajectory-previous.svg)
+### 15.2 trajectory-3D
+画IBVS对比工作中相对目标的全局坐标轨迹图
+```
+python 15-2-plot_data-3D.py ../datas/79ef1e60-7706-11ee-914d-000c2992733c/ekf_node-2-stdout.log mav_pos -t "35 40" -p
+```
+![](./output/plotxy-IBVS-3D.svg)
+### 15.3 Results for IBVS compare. (b) image coordinates
+画IBVS对比工作中原始和滤波后图像坐标随时间变化图
+```
+python 15-3-plot_data.py ../datas/79ef1e60-7706-11ee-914d-000c2992733c/ekf_node-2-stdout.log IMG_x ekf_x IMG_y ekf_y -t "35 40" --subplot 2
+```
+![](./output/subplot-IBVS.svg)
+## 15.4 Attitude
+画IBVS对比工作中姿态随时间变化图
+```
+python 15-4-plot_data.py ../datas/79ef1e60-7706-11ee-914d-000c2992733c/ekf_node-2-stdout.log mav_q -t "35 40" -s
+```
+![](./output/attitude-IBVS.svg)
+## 15.5. Boxplots of control error for EKF 
+画50hz下先前IBVS方法和提出方法的误差对比箱线图
+```
+python 15-5-CEP_IBVS-compare.py
+```
+![](./output/CEP_IBVS.svg)
+## 15.6. Error distribution of IBVS at 50Hz 
+画50Hz下先前IBVS方法的圆概率误差
+```
+# python scatter_with_rate.py
+python 15-6-scatter_IBVS-compare.py
+```
+![](./output/scatter_IBVS.svg)
+CEP_previous-IBVS: 0.457
+
+
 
 # 三、更多
 ## 1. 总体绘图逻辑
