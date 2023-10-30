@@ -55,10 +55,10 @@ depth = -1
 original_offset = np.array([0, 0, 0])
 
 sphere_pos = np.array([20, 25, 2])
+# sphere_vel = np.array([-5, 0, 2])
+# sphere_acc = np.array([0, 0, -0.5])
 sphere_vel = np.array([-5, 0, 2])
-sphere_acc = np.array([0, 0, -0.5])
-# sphere_vel = np.array([-5, 0, 0])
-# sphere_acc = np.array([0, 0, 0])
+sphere_acc = np.array([0, 0, 0])
 
 sphere_feb_pos = PoseStamped()
 # obj_state = ModelState()
@@ -163,15 +163,14 @@ def pos_image_ekf_cb(msg):
     # print("pos_i: {}".format(pos_i))
 
 
-def sphere_control(cnt, is_move=False):
+def sphere_control(dt, is_move=False):
     global sphere_pos, sphere_vel, sphere_acc
     obj_msg = Obj()
     
     obj_msg.id = 100
     obj_msg.type = 152
-    # obj_msg.position.x = sphere_pos_x + 5*np.sin(cnt*1.0/100)
-    sphere_pos = sphere_pos + sphere_vel * 0.02 * is_move
-    sphere_vel = sphere_vel + sphere_acc * 0.02 * is_move
+    sphere_pos = sphere_pos + sphere_vel * dt * is_move
+    sphere_vel = sphere_vel + sphere_acc * dt * is_move
     obj_msg.position.x = sphere_pos[0]
     obj_msg.position.y = sphere_pos[1]
     obj_msg.position.z = sphere_pos[2]
@@ -257,7 +256,7 @@ if __name__=="__main__":
     rospy.wait_for_service("mavros/set_mode")
     set_mode_client = rospy.ServiceProxy('mavros/set_mode', SetMode)
     # print("Clients Created")
-    rate = rospy.Rate(50)#50
+    rate = rospy.Rate(150)#50
     
     # ensure the connection 
     while(not current_state.connected):
@@ -275,7 +274,7 @@ if __name__=="__main__":
     arm_cmd = CommandBool()
     arm_cmd.value = True
 
-    last_request = rospy.Time.now()
+    time_last = rospy.Time.now().to_sec()
 
     # start
     cnt = -1
@@ -284,26 +283,28 @@ if __name__=="__main__":
         # print("time: {}".format(rospy.Time.now().to_sec() - last_request.to_sec()))
         cnt += 1
         # sphere_control()
+        time_now = rospy.Time.now().to_sec()
         if MODE == "Simulation":
-            sphere_control(cnt, ch8==1)
-            
-        # if ch8 == 0:
-        #     if current_state.mode == "OFFBOARD":
-        #         resp1 = set_mode_client(0, "POSCTL")	# (uint8 base_mode, string custom_mode)
-        #     if cnt % 10 == 0:
-        #         # print("Enter MANUAL mode")
-        #     Initial_pos = mav_pos
-        #     rate.sleep()
-        #     continue
-        # else:
-        #     if current_state.mode != "OFFBOARD":
-        #         resp1 = set_mode_client( 0,offb_set_mode.custom_mode )
-        #         if resp1.mode_sent:
-        #             # print("Offboard enabled")
-        #         last_request = rospy.Time.now()
+            sphere_control(dt=time_now-time_last, is_move=(ch8==1))
+        time_last = time_now
+
+        if MODE == "Simulation":
+            if ch8 == 0:
+                if current_state.mode == "OFFBOARD":
+                    resp1 = set_mode_client(0, "POSCTL")	# (uint8 base_mode, string custom_mode)
+                if cnt % 10 == 0:
+                    print("Enter MANUAL mode")
+                Initial_pos = mav_pos
+                rate.sleep()
+                continue
+            else:
+                if current_state.mode != "OFFBOARD":
+                    resp1 = set_mode_client( 0,offb_set_mode.custom_mode )
+                    if resp1.mode_sent:
+                        print("Offboard enabled")
         
         pos_info = {"mav_pos": mav_pos, "mav_vel": mav_vel, "mav_R": mav_R, "R_bc": np.array([[0,0,1], [1,0,0], [0,1,0]]), 
-                    "mav_original_angle": mav_original_angle, "Initial_pos": Initial_pos}
+                    "mav_yaw": mav_yaw, "mav_original_angle": mav_original_angle, "Initial_pos": Initial_pos}
 
         dlt_pos = sphere_pos - np.array(mav_pos)
         # print("dlt_pos: {}".format(dlt_pos))
