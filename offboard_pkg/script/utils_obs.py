@@ -273,6 +273,37 @@ class Utils(object):
         # print("n_co:{}, n_bo:{}, n_eo:{}, v_1:{}, v_2:{}, v_d:{}".format(n_co, n_bo, n_eo, v_1, v_2, v_d))
         return [v_d[0], v_d[1], v_d[2], yaw_rate]
 
+    def BacksteppingController(self, pos_info, pos_i, controller_reset):
+        if controller_reset: self.cnt = 0
+        #calacute nc,the first idex(c:camera,b:body,e:earth) represent the frmae, the second idex(c,o) represent the camera or obstacle
+        n_bc = pos_info["R_cb"].dot(self.n_cc)
+        n_ec = pos_info["mav_R"].dot(n_bc)
+        
+        #calacute the no
+        n_co = np.array([pos_i[0] - self.u0, pos_i[1] - self.v0, self.f], dtype=np.float64)
+        n_co /= np.linalg.norm(n_co)
+        n_bo = pos_info["R_cb"].dot(n_co)
+        n_eo = pos_info["mav_R"].dot(n_bo)
+
+        # 两种用法：1）给定世界系下固定的n_td，限定打击方向；2）相对光轴一向量，随相机运动
+        # n_td = np.array([0, -1, 0], dtype=np.float64)
+        n_td = np.array([np.cos(pos_info["mav_yaw"]), np.sin(pos_info["mav_yaw"]), 0.], dtype=np.float64)
+        v_1 = 2.0 * (n_eo - n_td)   # n_t -> n_td
+        v_2 = 1.0 * n_td            # v   -> n_td
+
+        v_d = v_1 + v_2
+        v_d /= np.linalg.norm(v_d)
+        V = np.linalg.norm(pos_info["mav_vel"])
+        # v_d *= min(V + 2.5, 12)
+        v_d *= V + 2
+
+        a_d = self.sat(1.0 * (v_d - pos_info["mav_vel"]), 6.)
+
+        yaw_rate = 0.002*(self.u0 - pos_i[0])
+        
+        # print("n_co:{}, n_bo:{}, n_eo:{}, v_1:{}, v_2:{}, v_d:{}".format(n_co, n_bo, n_eo, v_1, v_2, v_d))
+        return [a_d[0], a_d[1], a_d[2], yaw_rate]
+
     def WPController(self, pos_info, target_position_local):
         self.cnt_WP += 1
 
