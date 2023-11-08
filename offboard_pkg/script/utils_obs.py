@@ -311,7 +311,7 @@ class Utils(object):
         # print("n_t_in_e_precise: {}, n_t_in_e: {}".format(n_t_in_e_precise, n_t_in_e))
 
         # L_2
-        c_1 = 0.8
+        c_1 = 1.0
         z_1 = p_r
         v_r = mav_vel - sphere_vel
         # L_2 = L_1 + z_1.T.dot(z_1) / 2
@@ -321,12 +321,13 @@ class Utils(object):
         alpha_1 = 10 * n_t_in_e
 
         # L_3
-        c_2 = 0.15
+        c_2 = 0.8
         z_2 = v_r - alpha_1
         f_drag = -C_d * mav_vel.T.dot(mav_vel)
         L_3 = L_2 + z_2.T.dot(z_2) / 2
-        # alpha_2 = -c_2*m*z_2 - m*g - f_drag - c_1*m*v_r - m*z_1 + m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e)
-        alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r #- f_drag - m*z_1
+        alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r + m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e)
+        # alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r + m*n_t_in_e #- f_drag
+        # print("eps:", m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e))
 
         e_3 = np.array([[0], [0], [1]], dtype=np.float64)
         n_f = pos_info["mav_R"].dot(e_3)
@@ -334,7 +335,7 @@ class Utils(object):
         thrust_d = f_d / m / np.linalg.norm(g) * thrust_hover
 
         # L_4
-        c_3 = 0.1
+        c_3 = 0.3
         z_3 = 1 / m * (f_d * n_f - alpha_2)
         L_4 = L_3 + z_3.T.dot(z_3)
 
