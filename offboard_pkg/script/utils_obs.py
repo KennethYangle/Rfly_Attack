@@ -311,16 +311,17 @@ class Utils(object):
         # print("n_t_in_e_precise: {}, n_t_in_e: {}".format(n_t_in_e_precise, n_t_in_e))
 
         # L_2
-        c_1 = 0.1
+        c_1 = 0.8
         z_1 = p_r
         v_r = mav_vel - sphere_vel
         # L_2 = L_1 + z_1.T.dot(z_1) / 2
         L_2 = z_1.T.dot(z_1) / 2
         # alpha_1 = -c_1 * p_r
-        alpha_1 = 5 * n_t_in_e_precise
+        # alpha_1 = 10 * n_t_in_e_precise
+        alpha_1 = 10 * n_t_in_e
 
         # L_3
-        c_2 = 0.02
+        c_2 = 0.15
         z_2 = v_r - alpha_1
         f_drag = -C_d * mav_vel.T.dot(mav_vel)
         L_3 = L_2 + z_2.T.dot(z_2) / 2
@@ -333,7 +334,7 @@ class Utils(object):
         thrust_d = f_d / m / np.linalg.norm(g) * thrust_hover
 
         # L_4
-        c_3 = 0.02
+        c_3 = 0.1
         z_3 = 1 / m * (f_d * n_f - alpha_2)
         L_4 = L_3 + z_3.T.dot(z_3)
 

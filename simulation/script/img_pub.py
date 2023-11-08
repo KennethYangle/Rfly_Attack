@@ -29,9 +29,13 @@ def image_callback(data):
     cv2.imshow("img", cv_img)
 
     hue_image = cv2.cvtColor(cv_img, cv2.COLOR_BGR2HSV)
-    low_range = np.array([0, 200, 40])   #[0, 230, 80]
-    high_range = np.array([10, 255, 210]) # [5, 256, 200]
-    th = cv2.inRange(hue_image, low_range, high_range)
+    low_range1 = np.array([0, 100, 40])   #[0, 230, 80]
+    high_range1 = np.array([10, 255, 210]) # [5, 256, 200]
+    th1 = cv2.inRange(hue_image, low_range1, high_range1)
+    low_range2 = np.array([170, 100, 40])   #[0, 230, 80]
+    high_range2 = np.array([180, 255, 210]) # [5, 256, 200]
+    th2 = cv2.inRange(hue_image, low_range2, high_range2)
+    th = th1 + th2
     dilated = cv2.dilate(th, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)), iterations=2)
     cv2.imshow("hsv", dilated)
     cv2.waitKey(1)

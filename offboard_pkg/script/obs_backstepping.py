@@ -41,7 +41,7 @@ state_name = "InitializeState"
 idle_command = TwistStamped()
 
 sphere_pos = np.array([20., 75., 2.], dtype=np.float64)
-sphere_vel = np.array([0., 0., 0.], dtype=np.float64)
+sphere_vel = np.array([-5., 1., 2.], dtype=np.float64)
 sphere_acc = np.array([0., 0., 0.], dtype=np.float64)
 
 
