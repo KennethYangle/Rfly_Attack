@@ -325,8 +325,8 @@ class Utils(object):
         z_2 = v_r - alpha_1
         f_drag = -C_d * mav_vel.T.dot(mav_vel)
         L_3 = L_2 + z_2.T.dot(z_2) / 2
-        alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r + m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e)
         # alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r + m*n_t_in_e #- f_drag
+        alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r + m*n_t_in_e + 2*m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e)
         # print("eps:", m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e))
 
         e_3 = np.array([[0], [0], [1]], dtype=np.float64)
@@ -344,8 +344,11 @@ class Utils(object):
         z_2_dot = f_d/m*n_f + g + c_1*v_r #+ 1/m*f_drag
         alpha_2_dot = -c_2*m*z_2_dot - c_1*m*a_r - m*z_1_dot# + C_d*mav_vel.T.dot(mav_acc)
         n_f_x = self.skew(n_f)
+        A = 2*np.cross(n_td_in_e.T, n_t_in_e.T) + f_d / m * z_3.T.dot(n_f_x)
+        B = z_3.T.dot(z_2 - 1/m*alpha_2_dot + c_3*z_3)
 
-        omega_in_e = m / f_d * np.linalg.pinv(n_f_x).dot(z_2 - 1/m*alpha_2_dot + c_3*z_3)
+        # omega_in_e = m / f_d * np.linalg.pinv(n_f_x).dot(z_2 - 1/m*alpha_2_dot + c_3*z_3)
+        omega_in_e = np.linalg.pinv(A).dot(B)
         omega_in_b = pos_info["mav_R"].T.dot(omega_in_e)
 
         # return control command
