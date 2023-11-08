@@ -1,5 +1,5 @@
 <launch>
     <node name="img_pub" pkg="simulation" type="img_pub.py" />
     <node name="ekf_node" pkg="ekf_pkg" type="ekf_node"/>
-    <node name="main_node" pkg="offboard_pkg" type="obs_backstepping.py"/>
+    <node name="main_node" pkg="offboard_pkg" type="obs_backstepping.py" output="screen"/>
 </launch>

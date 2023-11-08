@@ -24,14 +24,14 @@ ch5, ch6, ch7, ch8, ch9, ch11, ch14 = 0, 0, 0, 0, 1, 1, 1
 ch20 = 0
 is_initialize_mav, is_initialize_vel, is_initialize_rc, is_initialize_img = False, False, False, False
 
-mav_pos = [0, 0, 0]
-mav_vel = np.array([0, 0, 0])
+mav_pos = np.array([0, 0, 0], dtype=np.float64)
+mav_vel = np.array([0, 0, 0], dtype=np.float64)
 mav_yaw = 0
 mav_R = np.zeros((3,3))
 # 相机系(RDF)转机体系(FLU)
 R_cb = np.array([[ 0,  0,  1],\
                  [-1,  0,  0],\
-                 [ 0, -1,  0]])
+                 [ 0, -1,  0]], dtype=np.float64)
 Initial_pos = [0, 0, 0]
 pos_i = [0, 0, 0, 0, 0]
 pos_i_raw = [0, 0, 0, 0, 0]
@@ -40,15 +40,9 @@ image_failed_cnt = 0
 state_name = "InitializeState"
 idle_command = TwistStamped()
 
-home_dx, home_dy = 0, 0
-depth = -1
-original_offset = np.array([0, 0, 0])
-
-sphere_pos = np.array([20, 25, 2])
-# sphere_vel = np.array([-5, 0, 2])
-# sphere_acc = np.array([0, 0, -0.5])
-sphere_vel = np.array([-5, 0, 2])
-sphere_acc = np.array([0, 0, 0])
+sphere_pos = np.array([20., 75., 2.], dtype=np.float64)
+sphere_vel = np.array([0., 0., 0.], dtype=np.float64)
+sphere_acc = np.array([0., 0., 0.], dtype=np.float64)
 
 
 def spin():
@@ -61,7 +55,7 @@ def state_cb(msg):
 def mav_pose_cb(msg):
     global mav_pos, mav_yaw, mav_R, is_initialize_mav, mav_pitch, mav_roll
     is_initialize_mav = True
-    mav_pos = [msg.pose.position.x, msg.pose.position.y, msg.pose.position.z]
+    mav_pos = np.array([msg.pose.position.x, msg.pose.position.y, msg.pose.position.z], dtype=np.float64)
     q0, q1, q2, q3 = msg.pose.orientation.w, msg.pose.orientation.x, msg.pose.orientation.y, msg.pose.orientation.z
     mav_yaw = math.atan2(2*(q0*q3 + q1*q2), 1-2*(q2*q2 + q3*q3))
     mav_pitch = math.asin(2*(q0*q2 - q1*q3))
@@ -69,14 +63,14 @@ def mav_pose_cb(msg):
     # 机体系(FLU)转世界系(ENU)
     mav_R = np.array([[q0**2+q1**2-q2**2-q3**2, 2*(q1*q2-q0*q3), 2*(q1*q3+q0*q2)],
                       [2*(q1*q2+q0*q3), q0**2-q1**2+q2**2-q3**2, 2*(q2*q3-q0*q1)],
-                      [2*(q1*q3-q0*q2), 2*(q2*q3+q0*q1), q0**2-q1**2-q2**2+q3**2]])
+                      [2*(q1*q3-q0*q2), 2*(q2*q3+q0*q1), q0**2-q1**2-q2**2+q3**2]], dtype=np.float64)
 
 
 def mav_vel_cb(msg):
     global mav_vel, is_initialize_vel
     is_initialize_vel = True
     # mav_vel = [msg.twist.linear.x, msg.twist.linear.y, msg.twist.linear.z]
-    mav_vel = np.array([msg.twist.linear.x, msg.twist.linear.y, msg.twist.linear.z])
+    mav_vel = np.array([msg.twist.linear.x, msg.twist.linear.y, msg.twist.linear.z], dtype=np.float64)
 
 def rcin_cb(msg):
     global ch5, ch6, ch7, ch8, ch9, ch11, ch14, is_initialize_rc
@@ -275,15 +269,16 @@ if __name__=="__main__":
         cnt += 1
         # sphere_control()
         time_now = rospy.Time.now().to_sec()
+        dt = time_now - time_last
         if MODE == "Simulation":
-            sphere_control(dt=time_now-time_last, is_move=(ch8==1))
+            sphere_control(dt=dt, is_move=(ch8==1))
         time_last = time_now
 
         if MODE == "Simulation":
             if ch8 == 0:
                 if current_state.mode == "OFFBOARD":
                     resp1 = set_mode_client(0, "POSCTL")	# (uint8 base_mode, string custom_mode)
-                if cnt % 10 == 0:
+                if cnt % 500 == 0:
                     print("Enter MANUAL mode")
                 Initial_pos = mav_pos
                 rate.sleep()
@@ -291,25 +286,28 @@ if __name__=="__main__":
             else:
                 if current_state.mode != "OFFBOARD":
                     resp1 = set_mode_client( 0,offb_set_mode.custom_mode )
-                    if resp1.mode_sent:
+                    if resp1.mode_sent and cnt % 500 == 0:
                         print("Offboard enabled")
         
         pos_info = {"mav_pos": mav_pos, "mav_vel": mav_vel, "mav_R": mav_R, "R_cb": R_cb, 
-                    "mav_yaw": mav_yaw, "Initial_pos": Initial_pos}
+                    "mav_yaw": mav_yaw, "Initial_pos": Initial_pos,
+                    "sphere_pos": sphere_pos, "sphere_vel": sphere_vel, "sphere_acc": sphere_acc}
 
-        dlt_pos = sphere_pos - np.array(mav_pos)
+        # dlt_pos = sphere_pos - mav_pos
         # print("dlt_pos: {}".format(dlt_pos))
         # print("mav_pos: {}".format(mav_pos))
         
         if ch7 >= 1:
-            cmd = u.BacksteppingController(pos_info, pos_i, controller_reset)
+            cmd = u.BacksteppingController(pos_info, pos_i, dt, controller_reset)
             controller_reset = False
-            # 识别到图像才进行角速度控制
-            if pos_i[1] > 0:
-                moveByBodyRateThrust(local_att_pub, 0., 2., 0., 0.75)
-            # # 否则hover
-            else:
-                local_vel_pub.publish(idle_command)
+            moveByBodyRateThrust(local_att_pub, cmd[0], cmd[1], cmd[2], cmd[3])
+            # # 识别到图像才进行角速度控制
+            # if pos_i[1] > 0:
+            #     # moveByBodyRateThrust(local_att_pub, 0., 0., 0., 0.609)
+            #     moveByBodyRateThrust(local_att_pub, cmd[0], cmd[1], cmd[2], cmd[3])
+            # # # 否则hover
+            # else:
+            #     local_vel_pub.publish(idle_command)
         else:
             Initial_pos = mav_pos
             controller_reset = True

@@ -2,8 +2,8 @@
    <node name="offboard_node" pkg="decision" type="offboard_obj.py" />
    <!-- <node name="obj_send" pkg="rflysim_ros_pkg" type="send_test.py" /> -->
    <arg name="ip" default="192.168.110.145" />
-   <arg name="mav_x" default="-188" />
-   <arg name="mav_y" default="-192" />
+   <arg name="mav_x" default="0" />
+   <arg name="mav_y" default="0" />
    <arg name="mav_z" default="0" />
    <node pkg="rflysim_ros_pkg" type="Rflysim_objwithsize.py" name="obj_control" output="screen">
         <param name="ip" value="$(arg ip)"/>

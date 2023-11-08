@@ -55,6 +55,7 @@ class Utils(object):
         self.cnt = 0
         self.cnt_WP = 1
         self.v_norm_d = 10
+        self.last_mav_vel = np.array([[0], [0], [0]], dtype=np.float64)
         #realsense: fx:632.9640658678117  fy:638.2668942402212
         self.f = params["FOC"] #150 #346.6  # 这个需要依据实际情况进行设定flength=(width/2)/tan(hfov/2),不同仿真环境以及真机实验中需要依据实际情况进行修改
         #camrea frame to mavros_body frame
@@ -273,36 +274,80 @@ class Utils(object):
         # print("n_co:{}, n_bo:{}, n_eo:{}, v_1:{}, v_2:{}, v_d:{}".format(n_co, n_bo, n_eo, v_1, v_2, v_d))
         return [v_d[0], v_d[1], v_d[2], yaw_rate]
 
-    def BacksteppingController(self, pos_info, pos_i, controller_reset):
-        if controller_reset: self.cnt = 0
-        #calacute nc,the first idex(c:camera,b:body,e:earth) represent the frmae, the second idex(c,o) represent the camera or obstacle
-        n_bc = pos_info["R_cb"].dot(self.n_cc)
-        n_ec = pos_info["mav_R"].dot(n_bc)
+    def BacksteppingController(self, pos_info, pos_i, dt, controller_reset):
+        # params
+        m = 1.4
+        g = np.array([[0], [0], [-9.801]], dtype=np.float64)
+        C_d = 0.073
+        thrust_hover = 0.609
+
+        # interceptor and target state
+        mav_pos = pos_info["mav_pos"].reshape(-1, 1)    # 将数组转化为列向量
+        mav_vel = pos_info["mav_vel"].reshape(-1, 1)
+        mav_acc = (mav_vel - self.last_mav_vel) / dt
+        self.last_mav_vel = mav_vel
+        sphere_pos = pos_info["sphere_pos"].reshape(-1, 1)
+        sphere_vel = pos_info["sphere_vel"].reshape(-1, 1)
+        sphere_acc = pos_info["sphere_acc"].reshape(-1, 1)
+
+        # calacute nc,the first idex(c:camera,b:body,e:earth) represent the frmae, the second idex(c,o) represent the camera or obstacle
+        n_c_in_c = self.n_cc.reshape(-1, 1)
+        n_c_in_b = pos_info["R_cb"].dot(n_c_in_c)
+        n_c_in_e = pos_info["mav_R"].dot(n_c_in_b)
         
-        #calacute the no
-        n_co = np.array([pos_i[0] - self.u0, pos_i[1] - self.v0, self.f], dtype=np.float64)
-        n_co /= np.linalg.norm(n_co)
-        n_bo = pos_info["R_cb"].dot(n_co)
-        n_eo = pos_info["mav_R"].dot(n_bo)
+        # calacute the no
+        n_t_in_c = np.array([[pos_i[0] - self.u0], [pos_i[1] - self.v0], [self.f]], dtype=np.float64)
+        n_t_in_c /= np.linalg.norm(n_t_in_c)
+        n_t_in_b = pos_info["R_cb"].dot(n_t_in_c)
+        n_t_in_e = pos_info["mav_R"].dot(n_t_in_b)
 
-        # 两种用法：1）给定世界系下固定的n_td，限定打击方向；2）相对光轴一向量，随相机运动
-        # n_td = np.array([0, -1, 0], dtype=np.float64)
-        n_td = np.array([np.cos(pos_info["mav_yaw"]), np.sin(pos_info["mav_yaw"]), 0.], dtype=np.float64)
-        v_1 = 2.0 * (n_eo - n_td)   # n_t -> n_td
-        v_2 = 1.0 * n_td            # v   -> n_td
+        # n_td design
+        n_td_in_e = n_c_in_e
 
-        v_d = v_1 + v_2
-        v_d /= np.linalg.norm(v_d)
-        V = np.linalg.norm(pos_info["mav_vel"])
-        # v_d *= min(V + 2.5, 12)
-        v_d *= V + 2
+        # L_1
+        p_r = mav_pos - sphere_pos
+        n_t_in_e_precise = -p_r / np.linalg.norm(p_r)
+        L_1 = 1 - n_td_in_e.T.dot(n_t_in_e)
+        # print("n_t_in_e_precise: {}, n_t_in_e: {}".format(n_t_in_e_precise, n_t_in_e))
 
-        a_d = self.sat(1.0 * (v_d - pos_info["mav_vel"]), 6.)
+        # L_2
+        c_1 = 0.1
+        z_1 = p_r
+        v_r = mav_vel - sphere_vel
+        # L_2 = L_1 + z_1.T.dot(z_1) / 2
+        L_2 = z_1.T.dot(z_1) / 2
+        # alpha_1 = -c_1 * p_r
+        alpha_1 = 5 * n_t_in_e_precise
 
-        yaw_rate = 0.002*(self.u0 - pos_i[0])
-        
-        # print("n_co:{}, n_bo:{}, n_eo:{}, v_1:{}, v_2:{}, v_d:{}".format(n_co, n_bo, n_eo, v_1, v_2, v_d))
-        return [a_d[0], a_d[1], a_d[2], yaw_rate]
+        # L_3
+        c_2 = 0.02
+        z_2 = v_r - alpha_1
+        f_drag = -C_d * mav_vel.T.dot(mav_vel)
+        L_3 = L_2 + z_2.T.dot(z_2) / 2
+        # alpha_2 = -c_2*m*z_2 - m*g - f_drag - c_1*m*v_r - m*z_1 + m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e)
+        alpha_2 = -c_2*m*z_2 - m*g - c_1*m*v_r #- f_drag - m*z_1
+
+        e_3 = np.array([[0], [0], [1]], dtype=np.float64)
+        n_f = pos_info["mav_R"].dot(e_3)
+        f_d = np.linalg.norm(alpha_2)
+        thrust_d = f_d / m / np.linalg.norm(g) * thrust_hover
+
+        # L_4
+        c_3 = 0.02
+        z_3 = 1 / m * (f_d * n_f - alpha_2)
+        L_4 = L_3 + z_3.T.dot(z_3)
+
+        a_r = mav_acc - sphere_acc
+        z_1_dot = v_r
+        z_2_dot = f_d/m*n_f + g + c_1*v_r #+ 1/m*f_drag
+        alpha_2_dot = -c_2*m*z_2_dot - c_1*m*a_r - m*z_1_dot# + C_d*mav_vel.T.dot(mav_acc)
+        n_f_x = self.skew(n_f)
+
+        omega_in_e = m / f_d * np.linalg.pinv(n_f_x).dot(z_2 - 1/m*alpha_2_dot + c_3*z_3)
+        omega_in_b = pos_info["mav_R"].T.dot(omega_in_e)
+
+        # return control command
+        return [omega_in_b[0], omega_in_b[1], omega_in_b[2], thrust_d]
 
     def WPController(self, pos_info, target_position_local):
         self.cnt_WP += 1
@@ -413,3 +458,8 @@ class Utils(object):
             elif a[i] < - deadv or a[i] == - deadv:
                 a[i] = a[i] + deadv
         return a
+    
+    def skew(self, n):
+        return np.array([[0, -n[2], n[1]],\
+                         [n[2], 0, -n[0]],\
+                         [-n[1], n[0], 0]], dtype=np.float64)
