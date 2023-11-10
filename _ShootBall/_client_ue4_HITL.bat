@@ -165,6 +165,9 @@ REM QGCPath
 tasklist|find /i "QGroundControl.exe" || start %PSP_PATH%\QGroundControl\QGroundControl.exe
 ECHO Start QGroundControl
 
+choice /t 5 /d y /n >nul
+%PSP_PATH%\Python38\python.exe %CURRENT_PATH%\client_ue4.py
+
 pause
 
 REM kill all applications when press a key
