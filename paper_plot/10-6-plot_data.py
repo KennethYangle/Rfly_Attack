@@ -92,7 +92,7 @@ def main(args):
             ax.plot(index[v], datas[v][0], label="mav_roll", linewidth=1)
             ax.plot(index[v], datas[v][1], label="mav_pitch", linewidth=1)
             ax.plot(index[v], datas[v][2], label="mav_yaw", linewidth=1)
-            ax.set_ylim(-0.9, 0.9)
+            ax.set_ylim(-1, 0.4)
             # plt.legend(loc='upper center')
         fig.savefig("../output/attitude-local-real.svg", format='svg', bbox_inches='tight')
         svg_to_emf("../output/attitude-local-real.svg")

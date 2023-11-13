@@ -226,7 +226,7 @@ python 10-5-plot_data.py ../datas/20210521_172502_sim.log mav_q -t "20 68.4" -s
 ### 10.6 Local Attitude
 画仿真中姿态随时间变化图
 ```
-python 10-6-plot_data.py ../datas/20210521_172502_sim.log mav_q -t "64 69" -s
+python 10-6-plot_data.py ../datas/20210521_172502_sim.log mav_q -t "57.7 62.4" -s
 ```
 ![](./output/attitude-local-real.svg)
 
