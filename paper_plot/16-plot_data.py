@@ -98,7 +98,7 @@ def main(args):
         plt.show()
 
     if args.subplot > 0:
-        figsize=set_size(55, fraction=1.2, hw_ratio=0.65)
+        figsize=set_size(190, fraction=1.2, hw_ratio=0.6)
         fig, ax = plt.subplots(2, 1, figsize=figsize)
         gap = nvar // args.subplot
         # # 两种线型效果不好
