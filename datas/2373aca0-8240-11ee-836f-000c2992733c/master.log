@@ -1,0 +1,1001 @@
+[rosmaster.main][INFO] 2023-11-14 00:17:28,442: initialization complete, waiting for shutdown
+[rosmaster.main][INFO] 2023-11-14 00:17:28,442: Starting ROS Master Node
+[xmlrpc][INFO] 2023-11-14 00:17:28,443: XML-RPC server binding to 0.0.0.0:11311
+[rosmaster.master][INFO] 2023-11-14 00:17:28,443: Master initialized: port[11311], uri[http://ubuntu:11311/]
+[xmlrpc][INFO] 2023-11-14 00:17:28,443: Started XML-RPC server [http://ubuntu:11311/]
+[xmlrpc][INFO] 2023-11-14 00:17:28,444: xml rpc node: starting XML-RPC server
+[rosmaster.master][INFO] 2023-11-14 00:17:28,486: +PARAM [/run_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,486: +PARAM [/roslaunch/uris/host_ubuntu__43299] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,558: +PARAM [/mavros/mission/use_mission_item_int] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/imu/linear_acceleration_stdev] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/landing_target/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/image/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/setpoint_attitude/tf/listen] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/wheel_odometry/tf/send] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/odometry/fcu/odom_child_id_des] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/sys/disable_diag] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/setpoint_position/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/startup_px4_usb_quirk] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/target_component_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/setpoint_position/tf/rate_limit] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/imu/orientation_stdev] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/wheel_odometry/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/landing_target/tf/send] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/wheel_odometry/count] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/wheel_odometry/wheel1/radius] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/fake_gps/tf/rate_limit] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/safety_area/p2/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/px4flow/ranger_fov] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/landing_target/mav_frame] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/safety_area/p2/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/distance_sensor/lidarlite_pub/field_of_view] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/fake_gps/geo_origin/lon] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/local_position/tf/send] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/plugin_blacklist] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/imu/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/landing_target/tf/rate_limit] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,559: +PARAM [/mavros/landing_target/camera/fov_y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/landing_target/camera/fov_x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/local_position/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/wheel_odometry/wheel0/radius] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/local_position/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/time/timesync_mode] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/setpoint_accel/send_force] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/landing_target/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/fake_gps/use_mocap] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/setpoint_attitude/reverse_thrust] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/vision_speed/twist_cov] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/local_position/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/landing_target/target_size/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/landing_target/target_size/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/distance_sensor/laser_1_sub/id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/landing_target/image/width] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/setpoint_position/tf/listen] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/cmd/use_comp_id_system_control] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/plugin_whitelist] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/fake_gps/fix_type] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/conn/heartbeat_rate] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,560: +PARAM [/mavros/distance_sensor/sonar_1_sub/subscriber] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/mocap/use_pose] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/global_position/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/tdr_radio/low_rssi] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/global_position/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/wheel_odometry/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/setpoint_velocity/mav_frame] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/global_position/use_relative_alt] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/fcu_protocol] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/wheel_odometry/use_rpm] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/distance_sensor/lidarlite_pub/sensor_position/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/distance_sensor/lidarlite_pub/sensor_position/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/distance_sensor/lidarlite_pub/sensor_position/z] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/setpoint_position/mav_frame] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/fake_gps/geo_origin/alt] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/setpoint_raw/thrust_scaling] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/safety_area/p1/z] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/safety_area/p1/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/safety_area/p1/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/fake_gps/eph] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/global_position/tf/send] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/vision_pose/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/fake_gps/tf/listen] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,561: +PARAM [/mavros/vibration/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/fake_gps/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/safety_area/p2/z] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/setpoint_attitude/use_quaternion] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/fake_gps/satellites_visible] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/time/time_ref_source] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/target_system_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/conn/timesync_rate] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/fake_gps/epv] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/px4flow/ranger_max_range] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/setpoint_attitude/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/mission/pull_after_gcs] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/gcs_url] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/lidarlite_pub/id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/imu/angular_velocity_stdev] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/laser_1_sub/subscriber] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/sonar_1_sub/orientation] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/send_raw] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/wheel0/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/wheel0/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/vision_pose/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/global_position/tf/global_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/vision_speed/listen_twist] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/wheel1/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/wheel_odometry/wheel1/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/vision_pose/tf/rate_limit] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/sonar_1_sub/id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/global_position/rot_covariance] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/landing_target/land_target_type] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/lidarlite_pub/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/distance_sensor/laser_1_sub/orientation] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,562: +PARAM [/mavros/landing_target/tf/listen] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/wheel_odometry/vel_error] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/fake_gps/mocap_transform] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/setpoint_attitude/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/mocap/use_tf] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/landing_target/listen_lt] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/conn/system_time_rate] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/wheel_odometry/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/fake_gps/tf/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/global_position/child_frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/px4flow/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/px4flow/ranger_min_range] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/imu/magnetic_stdev] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/conn/timeout] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/z] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/sensor_position/x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/lidarlite_pub/orientation] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/fake_gps/tf/send] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/fcu_url] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/odometry/fcu/odom_parent_id_des] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/field_of_view] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/send_tf] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/lidarlite_pub/send_tf] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/landing_target/image/height] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/setpoint_attitude/tf/rate_limit] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/vision_pose/tf/listen] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/wheel_odometry/send_twist] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/distance_sensor/hrlv_ez4_pub/orientation] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,563: +PARAM [/mavros/setpoint_position/tf/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/sys/min_voltage] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/fake_gps/geo_origin/lat] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/fake_gps/gps_rate] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/global_position/gps_uere] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/global_position/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/local_position/tf/send_fcu] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/time/timesync_avg_alpha] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,564: +PARAM [/mavros/fake_gps/use_vision] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:28,585: +SERVICE [/rosout/get_loggers] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,585: +SERVICE [/rosout/set_logger_level] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,586: +PUB [/rosout_agg] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,587: +SUB [/rosout] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,610: +PUB [/rosout] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,611: +SERVICE [/mavros/get_loggers] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,612: +SERVICE [/mavros/set_logger_level] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,613: +PUB [/diagnostics] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,644: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/']
+[rosmaster.master][INFO] 2023-11-14 00:17:28,646: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:28,648: +SUB [/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,649: +SUB [/tf_static] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,649: +PUB [/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,650: +PUB [/tf_static] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,744: publisherUpdate[/tf] -> http://ubuntu:40749/ ['http://ubuntu:40749/']
+[rosmaster.master][INFO] 2023-11-14 00:17:28,745: publisherUpdate[/tf] -> http://ubuntu:40749/ ['http://ubuntu:40749/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:28,745: publisherUpdate[/tf_static] -> http://ubuntu:40749/ ['http://ubuntu:40749/']
+[rosmaster.master][INFO] 2023-11-14 00:17:28,746: publisherUpdate[/tf_static] -> http://ubuntu:40749/ ['http://ubuntu:40749/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:28,804: +PUB [/mavlink/from] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,805: +SUB [/mavlink/to] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,827: +PUB [/mavros/radio_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,827: +PUB [/mavros/target_actuator_control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,828: +SUB [/mavros/actuator_control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,839: +PUB [/mavros/adsb/vehicle] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,840: +SUB [/mavros/adsb/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,840: +PUB [/mavros/altitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,840: +PUB [/mavros/cam_imu_sync/cam_imu_stamp] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,841: +SERVICE [/mavros/cmd/command] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,841: +SERVICE [/mavros/cmd/command_int] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,842: +SERVICE [/mavros/cmd/arming] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,842: +SERVICE [/mavros/cmd/set_home] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,842: +SERVICE [/mavros/cmd/takeoff] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,842: +SERVICE [/mavros/cmd/land] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,843: +SERVICE [/mavros/cmd/trigger_control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,843: +SERVICE [/mavros/cmd/trigger_interval] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,843: +SERVICE [/mavros/cmd/vtol_transition] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,844: +SUB [/mavros/companion_process/status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,845: +SUB [/mavros/debug_value/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,846: +PUB [/mavros/debug_value/debug] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,846: +PUB [/mavros/debug_value/debug_vector] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,846: +PUB [/mavros/debug_value/named_value_float] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,846: +PUB [/mavros/debug_value/named_value_int] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,847: +PUB [/mavros/esc_info] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,847: +PUB [/mavros/esc_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,858: +SUB [/mavros/fake_gps/mocap/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,859: +SERVICE [/mavros/ftp/list] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,859: +SERVICE [/mavros/ftp/open] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,859: +SERVICE [/mavros/ftp/close] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,860: +SERVICE [/mavros/ftp/read] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,860: +SERVICE [/mavros/ftp/write] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,860: +SERVICE [/mavros/ftp/mkdir] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,860: +SERVICE [/mavros/ftp/rmdir] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,861: +SERVICE [/mavros/ftp/remove] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,861: +SERVICE [/mavros/ftp/truncate] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,862: +SERVICE [/mavros/ftp/reset] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,862: +SERVICE [/mavros/ftp/rename] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,862: +SERVICE [/mavros/ftp/checksum] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,871: +PUB [/mavros/global_position/raw/fix] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,871: +PUB [/mavros/global_position/raw/gps_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,872: +PUB [/mavros/global_position/raw/satellites] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,872: +PUB [/mavros/global_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,873: +PUB [/mavros/global_position/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,873: +PUB [/mavros/global_position/rel_alt] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,873: +PUB [/mavros/global_position/compass_hdg] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,874: +PUB [/mavros/global_position/gp_origin] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,875: +SUB [/mavros/global_position/set_gp_origin] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,876: +SUB [/mavros/global_position/home] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,877: +PUB [/mavros/global_position/gp_lp_offset] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,881: +SUB [/mavros/gps_rtk/send_rtcm] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,881: +PUB [/mavros/gps_rtk/rtk_baseline] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,882: +PUB [/mavros/gpsstatus/gps1/raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,882: +PUB [/mavros/gpsstatus/gps2/raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,882: +PUB [/mavros/gpsstatus/gps1/rtk] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,883: +PUB [/mavros/gpsstatus/gps2/rtk] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,885: +SUB [/mavros/hil/state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,886: +SUB [/mavros/hil/gps] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,887: +SUB [/mavros/hil/imu_ned] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,888: +SUB [/mavros/hil/optical_flow] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,890: +SUB [/mavros/hil/rc_inputs] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,890: +PUB [/mavros/hil/controls] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,890: +PUB [/mavros/hil/actuator_controls] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,891: +PUB [/mavros/home_position/home] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,893: +SUB [/mavros/home_position/set] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,893: +SERVICE [/mavros/home_position/req_update] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,899: +PUB [/mavros/imu/data] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,899: +PUB [/mavros/imu/mag] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,900: +PUB [/mavros/imu/temperature_imu] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,900: +PUB [/mavros/imu/temperature_baro] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,901: +PUB [/mavros/imu/static_pressure] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,901: +PUB [/mavros/imu/diff_pressure] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,902: +PUB [/mavros/imu/data_raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,908: +PUB [/mavros/landing_target/pose_in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,909: +PUB [/mavros/landing_target/lt_marker] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,912: +SUB [/mavros/landing_target/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,914: +PUB [/mavros/local_position/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,915: +PUB [/mavros/local_position/pose_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,915: +PUB [/mavros/local_position/velocity_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,915: +PUB [/mavros/local_position/velocity_body] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,916: +PUB [/mavros/local_position/velocity_body_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,916: +PUB [/mavros/local_position/accel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,916: +PUB [/mavros/local_position/odom] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,917: +PUB [/mavros/log_transfer/raw/log_entry] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,917: +PUB [/mavros/log_transfer/raw/log_data] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,918: +SERVICE [/mavros/log_transfer/raw/log_request_list] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,918: +SERVICE [/mavros/log_transfer/raw/log_request_data] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,919: +SERVICE [/mavros/log_transfer/raw/log_request_end] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,919: +PUB [/mavros/manual_control/control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,920: +SUB [/mavros/manual_control/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,922: +SUB [/mavros/mocap/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,924: +SUB [/mavros/mount_control/command] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,924: +PUB [/mavros/mount_control/orientation] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,925: +SERVICE [/mavros/mount_control/configure] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,927: +SUB [/mavros/obstacle/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,931: +PUB [/mavros/odometry/in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,933: +SUB [/mavros/odometry/out] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,937: +SUB [/mavros/onboard_computer/status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,938: +SERVICE [/mavros/param/pull] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,938: +SERVICE [/mavros/param/push] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,938: +SERVICE [/mavros/param/set] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,938: +SERVICE [/mavros/param/get] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,939: +PUB [/mavros/param/param_value] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,942: +PUB [/mavros/px4flow/raw/optical_flow_rad] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,943: +PUB [/mavros/px4flow/ground_distance] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,943: +PUB [/mavros/px4flow/temperature] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,945: +SUB [/mavros/px4flow/raw/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,946: +PUB [/mavros/rc/in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,946: +PUB [/mavros/rc/out] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,947: +SUB [/mavros/rc/override] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,949: +SUB [/mavros/setpoint_accel/accel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,954: +SUB [/mavros/setpoint_attitude/thrust] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,955: +SUB [/mavros/setpoint_attitude/cmd_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,963: +SUB [/mavros/setpoint_position/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,964: +SUB [/mavros/setpoint_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,966: +SUB [/mavros/setpoint_position/global_to_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,968: +SUB [/mavros/global_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,970: +SUB [/mavros/local_position/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,971: +SERVICE [/mavros/setpoint_position/mav_frame] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,973: +SUB [/mavros/setpoint_raw/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,974: +SUB [/mavros/setpoint_raw/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,977: +SUB [/mavros/setpoint_raw/attitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,978: +PUB [/mavros/setpoint_raw/target_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,978: +PUB [/mavros/setpoint_raw/target_global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,979: +PUB [/mavros/setpoint_raw/target_attitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,981: +SUB [/mavros/setpoint_trajectory/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,981: +PUB [/mavros/setpoint_trajectory/desired] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,981: +SERVICE [/mavros/setpoint_trajectory/reset] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,982: +SERVICE [/mavros/setpoint_trajectory/mav_frame] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,984: +SUB [/mavros/setpoint_velocity/cmd_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,985: +SUB [/mavros/setpoint_velocity/cmd_vel_unstamped] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,985: +SERVICE [/mavros/setpoint_velocity/mav_frame] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,989: +PUB [/mavros/state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,989: +PUB [/mavros/extended_state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,990: +PUB [/mavros/battery] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,990: +PUB [/mavros/estimator_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,991: +PUB [/mavros/statustext/recv] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,994: +SUB [/mavros/statustext/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,994: +SERVICE [/mavros/set_stream_rate] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,995: +SERVICE [/mavros/set_mode] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,995: +SERVICE [/mavros/vehicle_info_get] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:28,996: +SERVICE [/mavros/set_message_interval] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,005: +PUB [/mavros/time_reference] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,005: +PUB [/mavros/timesync_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,007: +SUB [/mavros/trajectory/generated] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,010: +SUB [/mavros/trajectory/path] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,010: +PUB [/mavros/trajectory/desired] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,011: +PUB [/mavros/vfr_hud] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,015: +SUB [/mavros/vision_pose/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,017: +SUB [/mavros/vision_pose/pose_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,020: +SUB [/mavros/vision_speed/speed_twist_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,022: +PUB [/mavros/mission/waypoints] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,023: +PUB [/mavros/mission/reached] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,023: +SERVICE [/mavros/mission/pull] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,024: +SERVICE [/mavros/mission/push] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,024: +SERVICE [/mavros/mission/clear] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,025: +SERVICE [/mavros/mission/set_current] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:29,026: +PUB [/mavros/wind_estimation] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,125: +PARAM [/roslaunch/uris/host_ubuntu__37063] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,127: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,127: +PARAM [/rgb_image_receive_newprotocol_rgb/port] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/camera_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/image_transport] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/type] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/topic_name] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/frame_id] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,128: +PARAM [/rgb_image_receive_newprotocol_rgb/encoding] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:38,403: +PUB [/rosout] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,403: +SERVICE [/rgb_image_receive_newprotocol_rgb/get_loggers] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,404: +SERVICE [/rgb_image_receive_newprotocol_rgb/set_logger_level] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,407: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/']
+[rosmaster.master][INFO] 2023-11-14 00:17:38,407: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:38,448: +PUB [/camera/left/compressedDepth] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,449: +SERVICE [/camera/left/compressedDepth/set_parameters] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,449: +PUB [/camera/left/compressedDepth/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,450: +PUB [/camera/left/compressedDepth/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,451: +PARAM [/camera/left/compressedDepth/depth_max] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,451: +PARAM [/camera/left/compressedDepth/depth_quantization] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,451: +PARAM [/camera/left/compressedDepth/png_level] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,452: +PARAM [/camera/left/compressedDepth/depth_max] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,452: +PARAM [/camera/left/compressedDepth/depth_quantization] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,452: +PARAM [/camera/left/compressedDepth/png_level] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,455: +PUB [/camera/left/compressed] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,455: +SERVICE [/camera/left/compressed/set_parameters] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,455: +PUB [/camera/left/compressed/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,456: +PUB [/camera/left/compressed/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,458: +PARAM [/camera/left/compressed/format] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,459: +PARAM [/camera/left/compressed/jpeg_quality] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,459: +PARAM [/camera/left/compressed/png_level] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,460: +PARAM [/camera/left/compressed/format] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,460: +PARAM [/camera/left/compressed/jpeg_quality] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,460: +PARAM [/camera/left/compressed/png_level] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,462: +PUB [/camera/left] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,469: +PUB [/camera/left/theora] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,470: +SERVICE [/camera/left/theora/set_parameters] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,470: +PUB [/camera/left/theora/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,471: +PUB [/camera/left/theora/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:38,471: +PARAM [/camera/left/theora/optimize_for] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,472: +PARAM [/camera/left/theora/target_bitrate] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,472: +PARAM [/camera/left/theora/quality] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,473: +PARAM [/camera/left/theora/keyframe_frequency] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,473: +PARAM [/camera/left/theora/optimize_for] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,473: +PARAM [/camera/left/theora/target_bitrate] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,474: +PARAM [/camera/left/theora/quality] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,474: +PARAM [/camera/left/theora/keyframe_frequency] by /rgb_image_receive_newprotocol_rgb
+[rosmaster.master][INFO] 2023-11-14 00:17:38,475: +SUB [/wintime] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:17:48,166: +PARAM [/roslaunch/uris/host_ubuntu__41113] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,168: +PARAM [/obj_control/mav_z] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,169: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,169: +PARAM [/obj_control/mav_y] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,169: +PARAM [/obj_control/ip] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,169: +PARAM [/obj_control/mav_x] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,169: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:48,958: +PUB [/rosout] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:17:48,959: +SERVICE [/obj_control/get_loggers] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:17:48,960: +SERVICE [/obj_control/set_logger_level] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:17:48,960: +SUB [/ue4_ros/obj] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:17:48,971: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/']
+[rosmaster.master][INFO] 2023-11-14 00:17:48,971: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:50,187: +PARAM [/roslaunch/uris/host_ubuntu__35313] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:50,188: +PARAM [/rosversion] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:50,188: +PARAM [/rosdistro] by /roslaunch
+[rosmaster.master][INFO] 2023-11-14 00:17:50,359: +PUB [/rosout] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,359: +SERVICE [/ekf_node/get_loggers] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,359: +SERVICE [/ekf_node/set_logger_level] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,362: +SUB [/mavros/local_position/pose] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,364: +SUB [/mavros/local_position/velocity_local] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,365: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']
+[rosmaster.master][INFO] 2023-11-14 00:17:50,366: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:50,366: +SUB [/mavros/imu/data] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,368: +SUB [/tracker/pos_image] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,369: +SUB [/camera/left/compressed] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,371: +SUB [/ekf/state] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,371: +PUB [/tracker/pos_image_ekf] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,841: +PUB [/tracker/pos_image] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,868: publisherUpdate[/tracker/pos_image] -> http://ubuntu:36681/ ['http://ubuntu:33953/']
+[rosmaster.master][INFO] 2023-11-14 00:17:50,869: publisherUpdate[/tracker/pos_image] -> http://ubuntu:36681/ ['http://ubuntu:33953/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:50,940: +PUB [/rosout] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,942: +SERVICE [/img_pub/get_loggers] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,943: +SERVICE [/img_pub/set_logger_level] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,944: +SUB [/camera/left/compressed] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:17:50,969: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:33953/']
+[rosmaster.master][INFO] 2023-11-14 00:17:50,970: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:33953/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:51,216: +PUB [/rosout] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,217: +SERVICE [/main_node/get_loggers] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,217: +SERVICE [/main_node/set_logger_level] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,218: +SUB [/mavros/state] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,219: +SUB [/mavros/local_position/pose] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,219: +SUB [/mavros/local_position/velocity_local] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,220: +PUB [/ue4_ros/obj] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,271: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:33953/', 'http://ubuntu:34237/']
+[rosmaster.master][INFO] 2023-11-14 00:17:51,271: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:33953/', 'http://ubuntu:34237/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:51,271: publisherUpdate[/ue4_ros/obj] -> http://ubuntu:45261/ ['http://ubuntu:34237/']
+[rosmaster.master][INFO] 2023-11-14 00:17:51,272: publisherUpdate[/ue4_ros/obj] -> http://ubuntu:45261/ ['http://ubuntu:34237/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:51,395: +SUB [/tracker/pos_image] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,396: +SUB [/tracker/pos_image_ekf] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,397: +PUB [/mavros/setpoint_velocity/cmd_vel] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,399: +PUB [/mavros/setpoint_raw/local] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:17:51,473: publisherUpdate[/mavros/setpoint_velocity/cmd_vel] -> http://ubuntu:40749/ ['http://ubuntu:34237/']
+[rosmaster.master][INFO] 2023-11-14 00:17:51,475: publisherUpdate[/mavros/setpoint_velocity/cmd_vel] -> http://ubuntu:40749/ ['http://ubuntu:34237/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:17:51,475: publisherUpdate[/mavros/setpoint_raw/local] -> http://ubuntu:40749/ ['http://ubuntu:34237/']
+[rosmaster.master][INFO] 2023-11-14 00:17:51,476: publisherUpdate[/mavros/setpoint_raw/local] -> http://ubuntu:40749/ ['http://ubuntu:34237/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:22,980: -SUB [/mavros/state] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -SUB [/camera/left/compressed] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -SUB [/tracker/pos_image_ekf] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -PUB [/tracker/pos_image] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -SUB [/mavros/local_position/pose] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -PUB [/rosout] /img_pub http://ubuntu:33953/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,981: -SUB [/tracker/pos_image] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -SERVICE [/img_pub/get_loggers] /img_pub rosrpc://ubuntu:39033
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -SERVICE [/img_pub/set_logger_level] /img_pub rosrpc://ubuntu:39033
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -SUB [/mavros/local_position/velocity_local] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -PUB [/ue4_ros/obj] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -PUB [/rosout] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -PUB [/mavros/setpoint_raw/local] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -PUB [/mavros/setpoint_velocity/cmd_vel] /main_node http://ubuntu:34237/
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -SERVICE [/main_node/get_loggers] /main_node rosrpc://ubuntu:40207
+[rosmaster.master][INFO] 2023-11-14 00:19:22,982: -SERVICE [/main_node/set_logger_level] /main_node rosrpc://ubuntu:40207
+[rosmaster.master][INFO] 2023-11-14 00:19:23,003: -PUB [/rosout] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,003: -PUB [/camera/left/compressedDepth] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,003: -PUB [/camera/left/compressedDepth/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,004: -PUB [/camera/left/compressedDepth/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,004: -PUB [/camera/left/compressed] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,004: -PUB [/camera/left/compressed/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,004: -PUB [/camera/left/compressed/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,004: -PUB [/camera/left] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,005: -PUB [/camera/left/theora] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,005: -PUB [/camera/left/theora/parameter_descriptions] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,005: -PUB [/camera/left/theora/parameter_updates] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,005: -SUB [/wintime] /rgb_image_receive_newprotocol_rgb http://ubuntu:35951/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,006: -SERVICE [/rgb_image_receive_newprotocol_rgb/get_loggers] /rgb_image_receive_newprotocol_rgb rosrpc://ubuntu:45567
+[rosmaster.master][INFO] 2023-11-14 00:19:23,006: -SERVICE [/rgb_image_receive_newprotocol_rgb/set_logger_level] /rgb_image_receive_newprotocol_rgb rosrpc://ubuntu:45567
+[rosmaster.master][INFO] 2023-11-14 00:19:23,006: -SERVICE [/camera/left/compressedDepth/set_parameters] /rgb_image_receive_newprotocol_rgb rosrpc://ubuntu:45567
+[rosmaster.master][INFO] 2023-11-14 00:19:23,006: -SERVICE [/camera/left/compressed/set_parameters] /rgb_image_receive_newprotocol_rgb rosrpc://ubuntu:45567
+[rosmaster.master][INFO] 2023-11-14 00:19:23,006: -SERVICE [/camera/left/theora/set_parameters] /rgb_image_receive_newprotocol_rgb rosrpc://ubuntu:45567
+[rosmaster.master][INFO] 2023-11-14 00:19:23,035: -SUB [/ue4_ros/obj] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,035: -PUB [/rosout] /obj_control http://ubuntu:45261/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,036: -SERVICE [/obj_control/set_logger_level] /obj_control rosrpc://ubuntu:45199
+[rosmaster.master][INFO] 2023-11-14 00:19:23,036: -SERVICE [/obj_control/get_loggers] /obj_control rosrpc://ubuntu:45199
+[rosmaster.master][INFO] 2023-11-14 00:19:23,044: publisherUpdate[/tracker/pos_image] -> http://ubuntu:36681/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,045: -PUB [/rosout] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,045: publisherUpdate[/tracker/pos_image] -> http://ubuntu:36681/ []: sec=0.00, result=[0, 'Unknown Error', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,045: publisherUpdate[/tracker/pos_image] -> http://ubuntu:34237/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,045: publisherUpdate[/tracker/pos_image] -> http://ubuntu:34237/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,046: -PUB [/diagnostics] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,047: -PUB [/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,047: -PUB [/tf_static] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,048: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:34237/']
+[rosmaster.master][INFO] 2023-11-14 00:19:23,048: -PUB [/mavlink/from] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,049: -PUB [/mavros/radio_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,049: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/', 'http://ubuntu:34237/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,050: publisherUpdate[/ue4_ros/obj] -> http://ubuntu:45261/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,050: -PUB [/mavros/target_actuator_control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,050: publisherUpdate[/ue4_ros/obj] -> http://ubuntu:45261/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,051: -PUB [/mavros/adsb/vehicle] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,051: -PUB [/mavros/altitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,052: -PUB [/mavros/cam_imu_sync/cam_imu_stamp] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,052: -PUB [/mavros/debug_value/debug] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,053: -PUB [/mavros/debug_value/debug_vector] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,053: -PUB [/mavros/debug_value/named_value_float] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,053: -PUB [/mavros/debug_value/named_value_int] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,054: -PUB [/mavros/esc_info] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,054: -PUB [/mavros/esc_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,054: -PUB [/mavros/global_position/raw/fix] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,055: -PUB [/mavros/global_position/raw/gps_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,055: -PUB [/mavros/global_position/raw/satellites] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,055: -PUB [/mavros/global_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,055: -PUB [/mavros/global_position/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,056: -PUB [/mavros/global_position/rel_alt] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,056: -PUB [/mavros/global_position/compass_hdg] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,057: -PUB [/mavros/global_position/gp_origin] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,058: -PUB [/mavros/global_position/gp_lp_offset] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,059: -PUB [/mavros/gps_rtk/rtk_baseline] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,059: -PUB [/mavros/gpsstatus/gps1/raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,060: -PUB [/mavros/gpsstatus/gps2/raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,060: -PUB [/mavros/gpsstatus/gps1/rtk] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,060: -PUB [/mavros/gpsstatus/gps2/rtk] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,061: -PUB [/mavros/hil/controls] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,061: -PUB [/mavros/hil/actuator_controls] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,061: -PUB [/mavros/home_position/home] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,063: -PUB [/mavros/imu/data] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,064: -PUB [/mavros/imu/mag] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,064: -PUB [/mavros/imu/temperature_imu] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,064: -PUB [/mavros/imu/temperature_baro] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,065: -PUB [/mavros/imu/static_pressure] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,065: -PUB [/mavros/imu/diff_pressure] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,066: -PUB [/mavros/imu/data_raw] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,067: -PUB [/mavros/landing_target/pose_in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,067: -PUB [/mavros/landing_target/lt_marker] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,067: -PUB [/mavros/local_position/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,068: -PUB [/mavros/local_position/pose_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,068: -PUB [/mavros/local_position/velocity_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,069: -PUB [/mavros/local_position/velocity_body] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,069: -PUB [/mavros/local_position/velocity_body_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,069: -PUB [/mavros/local_position/accel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,070: -PUB [/mavros/local_position/odom] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,070: -PUB [/mavros/log_transfer/raw/log_entry] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,070: -PUB [/mavros/log_transfer/raw/log_data] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,070: -PUB [/mavros/manual_control/control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,070: -PUB [/mavros/mount_control/orientation] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,071: -PUB [/mavros/odometry/in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,071: -PUB [/mavros/param/param_value] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,072: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']
+[rosmaster.master][INFO] 2023-11-14 00:19:23,072: -PUB [/mavros/px4flow/raw/optical_flow_rad] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,073: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:35951/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,073: publisherUpdate[/mavros/setpoint_raw/local] -> http://ubuntu:40749/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,073: -PUB [/mavros/px4flow/ground_distance] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,074: publisherUpdate[/mavros/setpoint_raw/local] -> http://ubuntu:40749/ []: sec=0.00, exception=<Fault -1: 'publisherUpdate: unknown method name'>
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,074: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1316, in single_request
+    return self.parse_response(response)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1493, in parse_response
+    return u.close()
+  File "/usr/lib/python2.7/xmlrpclib.py", line 800, in close
+    raise Fault(**self._stack[0])
+Fault: <Fault -1: 'publisherUpdate: unknown method name'>
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,074: publisherUpdate[/mavros/setpoint_velocity/cmd_vel] -> http://ubuntu:40749/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,075: publisherUpdate[/mavros/setpoint_velocity/cmd_vel] -> http://ubuntu:40749/ []: sec=0.00, exception=<Fault -1: 'publisherUpdate: unknown method name'>
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,075: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1316, in single_request
+    return self.parse_response(response)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1493, in parse_response
+    return u.close()
+  File "/usr/lib/python2.7/xmlrpclib.py", line 800, in close
+    raise Fault(**self._stack[0])
+Fault: <Fault -1: 'publisherUpdate: unknown method name'>
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,075: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']
+[rosmaster.master][INFO] 2023-11-14 00:19:23,075: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:45261/', 'http://ubuntu:36681/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,075: publisherUpdate[/camera/left/compressed] -> http://ubuntu:36681/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,076: -PUB [/rosout] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,076: -PUB [/tracker/pos_image_ekf] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,077: -PUB [/mavros/px4flow/temperature] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,077: -SUB [/mavros/local_position/pose] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,078: -SUB [/mavros/local_position/velocity_local] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,078: -SUB [/mavros/imu/data] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,078: -PUB [/mavros/rc/in] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,079: -SUB [/tracker/pos_image] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,079: -PUB [/mavros/rc/out] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,079: -SUB [/camera/left/compressed] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,080: -PUB [/mavros/setpoint_raw/target_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,080: -SUB [/ekf/state] /ekf_node http://ubuntu:36681/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,080: -PUB [/mavros/setpoint_raw/target_global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,081: -SERVICE [/ekf_node/get_loggers] /ekf_node rosrpc://ubuntu:44431
+[rosmaster.master][INFO] 2023-11-14 00:19:23,082: -PUB [/mavros/setpoint_raw/target_attitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,083: -SERVICE [/ekf_node/set_logger_level] /ekf_node rosrpc://ubuntu:44431
+[rosmaster.master][INFO] 2023-11-14 00:19:23,084: -PUB [/mavros/setpoint_trajectory/desired] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,084: -PUB [/mavros/state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,084: -PUB [/mavros/extended_state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,085: -PUB [/mavros/battery] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,086: -PUB [/mavros/estimator_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,086: -PUB [/mavros/statustext/recv] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,086: -PUB [/mavros/time_reference] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,087: -PUB [/mavros/timesync_status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,087: -PUB [/mavros/trajectory/desired] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,087: -PUB [/mavros/vfr_hud] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,087: -PUB [/mavros/mission/waypoints] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,087: -PUB [/mavros/mission/reached] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,088: -PUB [/mavros/wind_estimation] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,089: publisherUpdate[/camera/left/compressed] -> http://ubuntu:36681/ []: sec=0.01, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,093: -SUB [/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,094: -SUB [/tf_static] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,094: -SUB [/mavlink/to] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,094: -SUB [/mavros/actuator_control] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,095: -SUB [/mavros/adsb/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,095: -SUB [/mavros/companion_process/status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,095: -SUB [/mavros/debug_value/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,096: -SUB [/mavros/fake_gps/mocap/tf] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,096: -SUB [/mavros/global_position/set_gp_origin] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,096: -SUB [/mavros/global_position/home] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,096: -SUB [/mavros/gps_rtk/send_rtcm] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,097: -SUB [/mavros/hil/state] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,097: -SUB [/mavros/hil/gps] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,097: -SUB [/mavros/hil/imu_ned] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,098: -SUB [/mavros/hil/optical_flow] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,098: -SUB [/mavros/hil/rc_inputs] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,098: -SUB [/mavros/home_position/set] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,099: -SUB [/mavros/landing_target/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,099: -SUB [/mavros/manual_control/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,099: -SUB [/mavros/mocap/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,100: -SUB [/mavros/mount_control/command] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,100: -SUB [/mavros/obstacle/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,100: -SUB [/mavros/odometry/out] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,100: -SUB [/mavros/onboard_computer/status] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,100: -SUB [/mavros/px4flow/raw/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,101: -SUB [/mavros/rc/override] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,101: -SUB [/mavros/setpoint_accel/accel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,101: -SUB [/mavros/setpoint_attitude/thrust] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,102: -SUB [/mavros/setpoint_attitude/cmd_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,102: -SUB [/mavros/setpoint_position/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,102: -SUB [/mavros/setpoint_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,102: -SUB [/mavros/setpoint_position/global_to_local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,103: -SUB [/mavros/global_position/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,103: -SUB [/mavros/local_position/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,103: -SUB [/mavros/setpoint_raw/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,103: -SUB [/mavros/setpoint_raw/global] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,104: -SUB [/mavros/setpoint_raw/attitude] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,104: -SUB [/mavros/setpoint_trajectory/local] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,104: -SUB [/mavros/setpoint_velocity/cmd_vel] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,104: -SUB [/mavros/setpoint_velocity/cmd_vel_unstamped] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,105: -SUB [/mavros/statustext/send] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,105: -SUB [/mavros/trajectory/generated] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,106: -SUB [/mavros/trajectory/path] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,106: -SUB [/mavros/vision_pose/pose] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,106: -SUB [/mavros/vision_pose/pose_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,107: -SUB [/mavros/vision_speed/speed_twist_cov] /mavros http://ubuntu:40749/
+[rosmaster.master][INFO] 2023-11-14 00:19:23,107: -SERVICE [/mavros/get_loggers] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,107: -SERVICE [/mavros/set_logger_level] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,107: -SERVICE [/mavros/cmd/command] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,120: -SERVICE [/mavros/cmd/command_int] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,121: -SERVICE [/mavros/cmd/arming] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,121: -SERVICE [/mavros/cmd/set_home] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,121: -SERVICE [/mavros/cmd/takeoff] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,122: -SERVICE [/mavros/cmd/land] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,127: -SERVICE [/mavros/cmd/trigger_control] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,127: -SERVICE [/mavros/cmd/trigger_interval] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,128: -SERVICE [/mavros/cmd/vtol_transition] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,128: -SERVICE [/mavros/ftp/list] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,128: -SERVICE [/mavros/ftp/open] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,128: -SERVICE [/mavros/ftp/close] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,128: -SERVICE [/mavros/ftp/read] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/write] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/mkdir] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/rmdir] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/remove] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/truncate] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,129: -SERVICE [/mavros/ftp/reset] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/ftp/rename] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/ftp/checksum] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/home_position/req_update] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/log_transfer/raw/log_request_list] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/log_transfer/raw/log_request_data] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,130: -SERVICE [/mavros/log_transfer/raw/log_request_end] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/mount_control/configure] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/param/pull] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/param/push] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/param/set] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/param/get] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,131: -SERVICE [/mavros/setpoint_position/mav_frame] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,132: -SERVICE [/mavros/setpoint_trajectory/reset] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,132: -SERVICE [/mavros/setpoint_trajectory/mav_frame] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,133: -SERVICE [/mavros/setpoint_velocity/mav_frame] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,133: -SERVICE [/mavros/set_stream_rate] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,133: -SERVICE [/mavros/set_mode] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,133: -SERVICE [/mavros/vehicle_info_get] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,133: -SERVICE [/mavros/set_message_interval] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,134: -SERVICE [/mavros/mission/pull] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,134: -SERVICE [/mavros/mission/push] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,134: -SERVICE [/mavros/mission/clear] /mavros rosrpc://ubuntu:32911
+[rosmaster.master][INFO] 2023-11-14 00:19:23,134: -SERVICE [/mavros/mission/set_current] /mavros rosrpc://ubuntu:32911
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,369: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,369: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,369: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,369: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:36681/']
+[rosmaster.master][INFO] 2023-11-14 00:19:23,369: publisherUpdate[/tf] -> http://ubuntu:40749/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,369: publisherUpdate[/mavros/imu/data] -> http://ubuntu:36681/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,370: publisherUpdate[/tf] -> http://ubuntu:40749/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,371: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,371: publisherUpdate[/tf_static] -> http://ubuntu:40749/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,371: publisherUpdate[/mavros/imu/data] -> http://ubuntu:36681/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,371: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:40749/', 'http://ubuntu:36681/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,372: publisherUpdate[/tf_static] -> http://ubuntu:40749/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,372: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:36681/']
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,372: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,373: publisherUpdate[/mavros/global_position/global] -> http://ubuntu:40749/ []
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,373: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,373: publisherUpdate[/mavros/global_position/global] -> http://ubuntu:40749/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,373: publisherUpdate[/rosout] -> http://ubuntu:41617/ ['http://ubuntu:36681/']: sec=0.00, result=[1, '', 0]
+[rosmaster.master][INFO] 2023-11-14 00:19:23,374: publisherUpdate[/mavros/local_position/pose] -> http://ubuntu:36681/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,374: publisherUpdate[/mavros/local_position/pose] -> http://ubuntu:40749/ []
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,374: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,374: publisherUpdate[/mavros/local_position/pose] -> http://ubuntu:36681/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.master][INFO] 2023-11-14 00:19:23,374: publisherUpdate[/rosout] -> http://ubuntu:41617/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,375: publisherUpdate[/mavros/local_position/pose] -> http://ubuntu:40749/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,375: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,375: publisherUpdate[/mavros/local_position/velocity_local] -> http://ubuntu:36681/ []
+[rosmaster.master][INFO] 2023-11-14 00:19:23,375: publisherUpdate[/mavros/local_position/velocity_local] -> http://ubuntu:36681/ []: sec=0.00, exception=[Errno 111] Connection refused
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,376: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:23,376: publisherUpdate[/rosout] -> http://ubuntu:41617/ []: sec=0.00, result=[1, '', 0]
+[rosmaster.threadpool][ERROR] 2023-11-14 00:19:23,376: Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/threadpool.py", line 218, in run
+    result = cmd(*args)
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosmaster/master_api.py", line 210, in publisher_update_task
+    ret = xmlrpcapi(api).publisherUpdate('/master', topic, pub_uris)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1243, in __call__
+    return self.__send(self.__name, args)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1602, in __request
+    verbose=self.__verbose
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1283, in request
+    return self.single_request(host, handler, request_body, verbose)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1311, in single_request
+    self.send_content(h, request_body)
+  File "/usr/lib/python2.7/xmlrpclib.py", line 1459, in send_content
+    connection.endheaders(request_body)
+  File "/usr/lib/python2.7/httplib.py", line 1095, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python2.7/httplib.py", line 898, in _send_output
+    self.send(msg)
+  File "/usr/lib/python2.7/httplib.py", line 860, in send
+    self.connect()
+  File "/usr/lib/python2.7/httplib.py", line 837, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python2.7/socket.py", line 575, in create_connection
+    raise err
+error: [Errno 111] Connection refused
+
+[rosmaster.master][INFO] 2023-11-14 00:19:24,587: -PUB [/rosout_agg] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:19:24,587: -SUB [/rosout] /rosout http://ubuntu:41617/
+[rosmaster.master][INFO] 2023-11-14 00:19:24,587: -SERVICE [/rosout/get_loggers] /rosout rosrpc://ubuntu:52841
+[rosmaster.master][INFO] 2023-11-14 00:19:24,588: -SERVICE [/rosout/set_logger_level] /rosout rosrpc://ubuntu:52841
+[rosmaster.main][INFO] 2023-11-14 00:19:24,701: keyboard interrupt, will exit
+[rosmaster.main][INFO] 2023-11-14 00:19:24,702: stopping master...
+[rospy.core][INFO] 2023-11-14 00:19:24,702: signal_shutdown [atexit]

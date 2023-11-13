@@ -1,0 +1,49 @@
+[rospy.client][INFO] 2023-11-14 00:17:51,111: init_node, name[/main_node], pid[4213]
+[xmlrpc][INFO] 2023-11-14 00:17:51,112: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-11-14 00:17:51,112: Started XML-RPC server [http://ubuntu:34237/]
+[rospy.impl.masterslave][INFO] 2023-11-14 00:17:51,112: _ready: http://ubuntu:34237/
+[rospy.init][INFO] 2023-11-14 00:17:51,112: ROS Slave URI: [http://ubuntu:34237/]
+[xmlrpc][INFO] 2023-11-14 00:17:51,113: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2023-11-14 00:17:51,113: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2023-11-14 00:17:51,214: registered with master
+[rospy.rosout][INFO] 2023-11-14 00:17:51,214: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-11-14 00:17:51,216: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-11-14 00:17:51,216: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-11-14 00:17:51,398: topic[/ue4_ros/obj] adding connection to [/obj_control], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,399: topic[/mavros/local_position/velocity_local] adding connection to [http://ubuntu:40749/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,403: topic[/tracker/pos_image_ekf] adding connection to [http://ubuntu:36681/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,406: topic[/tracker/pos_image] adding connection to [http://ubuntu:33953/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,410: topic[/mavros/local_position/pose] adding connection to [http://ubuntu:40749/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,414: topic[/mavros/state] adding connection to [http://ubuntu:40749/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,496: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,679: topic[/mavros/setpoint_velocity/cmd_vel] adding connection to [/mavros], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,679: topic[/mavros/setpoint_raw/local] adding connection to [/mavros], count 0
+[rospy.core][INFO] 2023-11-14 00:19:22,979: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-14 00:19:22,983: topic[/ue4_ros/obj] removing connection to /obj_control
+[rospy.internal][WARNING] 2023-11-14 00:19:22,983: Unknown error initiating TCP/IP socket to ubuntu:39033 (http://ubuntu:33953/): Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 562, in connect
+    self.read_header()
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 657, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosgraph/network.py", line 357, in read_ros_handshake_header
+    d = sock.recv(buff_size)
+error: [Errno 104] Connection reset by peer
+
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/tracker/pos_image] removing connection to http://ubuntu:33953/
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/mavros/setpoint_raw/local] removing connection to /mavros
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/mavros/setpoint_velocity/cmd_vel] removing connection to /mavros
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/mavros/state] removing connection to http://ubuntu:40749/
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/tracker/pos_image_ekf] removing connection to http://ubuntu:36681/
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/mavros/local_position/pose] removing connection to http://ubuntu:40749/
+[rospy.internal][INFO] 2023-11-14 00:19:22,984: topic[/mavros/local_position/velocity_local] removing connection to http://ubuntu:40749/
+[rospy.impl.masterslave][INFO] 2023-11-14 00:19:22,984: signal-2
+[rospy.internal][WARNING] 2023-11-14 00:19:23,134: Unknown error initiating TCP/IP socket to ubuntu:32911 (http://ubuntu:40749/): Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 562, in connect
+    self.read_header()
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 657, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosgraph/network.py", line 357, in read_ros_handshake_header
+    d = sock.recv(buff_size)
+error: [Errno 104] Connection reset by peer
+

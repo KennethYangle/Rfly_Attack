@@ -1,0 +1,23 @@
+[rospy.client][INFO] 2023-11-14 00:17:50,838: init_node, name[/img_pub], pid[4211]
+[xmlrpc][INFO] 2023-11-14 00:17:50,838: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-11-14 00:17:50,839: Started XML-RPC server [http://ubuntu:33953/]
+[rospy.impl.masterslave][INFO] 2023-11-14 00:17:50,839: _ready: http://ubuntu:33953/
+[rospy.init][INFO] 2023-11-14 00:17:50,839: ROS Slave URI: [http://ubuntu:33953/]
+[xmlrpc][INFO] 2023-11-14 00:17:50,839: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2023-11-14 00:17:50,839: Registering with master node http://localhost:11311
+[rospy.registration][INFO] 2023-11-14 00:17:50,840: Registering publisher topic [/tracker/pos_image] type [std_msgs/Float32MultiArray] with master
+[rospy.init][INFO] 2023-11-14 00:17:50,940: registered with master
+[rospy.rosout][INFO] 2023-11-14 00:17:50,940: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-11-14 00:17:50,941: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-11-14 00:17:50,941: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-11-14 00:17:50,960: topic[/camera/left/compressed] adding connection to [http://ubuntu:35951/], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,072: topic[/tracker/pos_image] adding connection to [/ekf_node], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,174: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,408: topic[/tracker/pos_image] adding connection to [/main_node], count 1
+[rospy.core][INFO] 2023-11-14 00:19:22,980: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-14 00:19:22,982: topic[/tracker/pos_image] removing connection to /ekf_node
+[rospy.internal][INFO] 2023-11-14 00:19:22,982: topic[/tracker/pos_image] removing connection to /main_node
+[rospy.internal][INFO] 2023-11-14 00:19:22,983: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-14 00:19:22,983: topic[/camera/left/compressed] removing connection to http://ubuntu:35951/
+[rospy.impl.masterslave][INFO] 2023-11-14 00:19:22,983: signal-2
+[rospy.core][INFO] 2023-11-14 00:19:23,088: signal_shutdown [atexit]

@@ -338,6 +338,13 @@ python 15-6-scatter_IBVS-compare.py
 CEP_previous-IBVS: 0.457
 
 
+### 16 Results for DKF after target loss. (a) image coordinates
+画目标丢失后DKF结果
+```
+python 16-plot_data.py ../datas/2373aca0-8240-11ee-836f-000c2992733c/ekf_node-2-stdout.log IMG_x ekf_x IMG_y ekf_y -t "0 40" --subplot 2
+```
+![](./output/subplot-loss.svg)
+
 
 # 三、更多
 ## 1. 总体绘图逻辑

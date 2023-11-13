@@ -1,0 +1,27 @@
+[rospy.client][INFO] 2023-11-14 00:17:48,854: init_node, name[/obj_control], pid[4176]
+[xmlrpc][INFO] 2023-11-14 00:17:48,854: XML-RPC server binding to 0.0.0.0:0
+[xmlrpc][INFO] 2023-11-14 00:17:48,855: Started XML-RPC server [http://ubuntu:45261/]
+[rospy.init][INFO] 2023-11-14 00:17:48,855: ROS Slave URI: [http://ubuntu:45261/]
+[rospy.impl.masterslave][INFO] 2023-11-14 00:17:48,855: _ready: http://ubuntu:45261/
+[xmlrpc][INFO] 2023-11-14 00:17:48,855: xml rpc node: starting XML-RPC server
+[rospy.registration][INFO] 2023-11-14 00:17:48,856: Registering with master node http://localhost:11311
+[rospy.init][INFO] 2023-11-14 00:17:48,956: registered with master
+[rospy.rosout][INFO] 2023-11-14 00:17:48,956: initializing /rosout core topic
+[rospy.rosout][INFO] 2023-11-14 00:17:48,958: connected to core topic /rosout
+[rospy.simtime][INFO] 2023-11-14 00:17:48,959: /use_sim_time is not set, will not subscribe to simulated time [/clock] topic
+[rospy.internal][INFO] 2023-11-14 00:17:49,173: topic[/rosout] adding connection to [/rosout], count 0
+[rospy.internal][INFO] 2023-11-14 00:17:51,396: topic[/ue4_ros/obj] adding connection to [http://ubuntu:34237/], count 0
+[rospy.internal][ERROR] 2023-11-14 00:19:22,983: Unable to initiate TCP/IP socket to ubuntu:40207 (http://ubuntu:34237/): Traceback (most recent call last):
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 562, in connect
+    self.read_header()
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 657, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+  File "/opt/ros/melodic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py", line 600, in _validate_header
+    raise TransportInitError("remote error reported: %s"%header['error'])
+TransportInitError: remote error reported: node shutting down
+
+[rospy.core][INFO] 2023-11-14 00:19:23,035: signal_shutdown [signal-2]
+[rospy.internal][INFO] 2023-11-14 00:19:23,036: topic[/rosout] removing connection to /rosout
+[rospy.internal][INFO] 2023-11-14 00:19:23,036: topic[/ue4_ros/obj] removing connection to http://ubuntu:34237/
+[rospy.impl.masterslave][INFO] 2023-11-14 00:19:23,036: signal-2
+[rospy.core][INFO] 2023-11-14 00:19:23,189: signal_shutdown [atexit]
