@@ -1,3 +1,16 @@
+# 环境配置
+1. Windows和Linux各下载一份本代码，Linux中编译。
+
+2. 如果使用虚拟机，建议使用桥接模式。
+
+3. Windows中`_ShootBall/Config.json`，"SendProtocol":[0,192,168,110,166,9999,0,0]字段中改为Linux的IP。如果不是桥接模式，还需修改`_ShootBall/client_ue4_SITL.bat`中SET IS_BROADCAST=255.255.255.255为Linux的IP。
+
+4. Linux中，本文件夹下运行，IP为Windows的IP。
+```
+python3 change_IP.py 192.168.110.145
+```
+
+
 # 一、运行
 ## 1. 仿真
 修改`settings.json`中`"MODE": "Simulation"`

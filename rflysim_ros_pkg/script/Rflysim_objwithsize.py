@@ -69,13 +69,9 @@ sendUE4Pos(CopterID, VehicleType, RotorSpeed, PosM, AngEulerRad, windowsID = 0) 
 
 def obj_cb(msg):
     degree_to_rate = math.pi/180
-    global obj_pos, obj_angle,obj_type, obj_id, obj_size
+    global obj_pos, obj_angle,obj_type, obj_id, obj_size, param_x, param_y, param_z, param_ip
     obj_id = msg.id
     obj_type = msg.type
-    param_x = rospy.get_param("/obj_control/mav_x")
-    param_y = rospy.get_param("/obj_control/mav_y")
-    param_z = rospy.get_param("/obj_control/mav_z")
-    param_ip = rospy.get_param("/obj_control/ip")
     
     obj_pos = [msg.position.y + param_x, msg.position.x + param_y, - msg.position.z + param_z]
     obj_angle = [msg.angule.y, msg.angule.x, np.pi/2 - msg.angule.z]
@@ -87,5 +83,9 @@ def obj_cb(msg):
 if __name__ == '__main__':
     rospy.init_node('obj_control', anonymous=True)
     rospy.Subscriber("ue4_ros/obj", Obj, obj_cb)
+    param_x = rospy.get_param("/obj_control/mav_x")
+    param_y = rospy.get_param("/obj_control/mav_y")
+    param_z = rospy.get_param("/obj_control/mav_z")
+    param_ip = rospy.get_param("/obj_control/ip")
     rospy.spin()
 
