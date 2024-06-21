@@ -19,6 +19,9 @@ data.mat
 *.emf
 # *.pkl
 # *.log
+*.mat
+data_20220427/*
+!data_20220427/readme.md
 
 # # configs
 # settings.json

@@ -113,8 +113,16 @@ python 1-1-draw_trajectory-directly.py
 ```
 ![](./output/trajectory-directly.svg)
 
+### 1.2 Trajectories at different target speeds.
+画50组实验的全体轨迹图，使用`datas_30Hz.pkl`
+```
+python 1-2-get_traj.py
+```
+![](./output/trajectory-8shape.svg)
+
 ## 2. Boxplots of control error for EKF 
-画30hz下有无EKF的误差对比箱线图
+画30hz下有无EKF的误差对比箱线图，纵轴坐标为
+![](http://latex.codecogs.com/svg.latex?\|\bf{e}\|\,{(\mathrm{m})})
 ```
 # python CEP_with_ekf.py
 python 2-CEP_with_ekf.py
@@ -128,6 +136,21 @@ python 2-CEP_with_ekf.py
 python 3-CEP_with_rate.py
 ```
 ![](./output/CEP_with_rate.svg)
+
+## 3.1 Boxplots of control error for different target speed
+画不同目标运动速度下拦截误差对比箱线图
+```
+python 3-1-CEP_with_target-speed.py
+```
+![](./output/CEP_with_speed.svg)
+
+## 3.2 Boxplots of estimation error for different target speed
+画不同目标运动速度下DKF估计误差对比箱线图，纵轴坐标为
+![](http://latex.codecogs.com/svg.latex?\arccos({\bf{n}}_{\rm{t}}^{\rm{T}}\hat{\bf{n}}_{\rm{t}})\,(\rm{rad}))
+```
+python 3-2-DKFerror_with_target-speed.py
+```
+![](./output/DKF_with_speed.svg)
 
 ## 4. Error distribution at 10Hz、30Hz、50Hz 
 画不同图像频率下撞击点散点图和圆概率误差
