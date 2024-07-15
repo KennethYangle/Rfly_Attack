@@ -28,17 +28,10 @@ QGC中起飞到4m左右，聚焦Linux小窗口上，按`O`进入offboard模式�
 ## 2. 实飞
 修改`settings.json`中`"MODE": "RealFlight"`
     "IsRC": true,
+~~运行`./offboard_pkg/shell/all.sh`~~
 
-修改`offboard_pkg/script/utils_obs.py`第194行n_td打击方向
-
-运行
-`./offboard_pkg/shell/all.sh`
-或者
-`./offboard_pkg/shell/all_high.sh`
-或者
-`./offboard_pkg/shell/all_acc.sh`
-或者
-`./offboard_pkg/shell/all_high_startup.sh`
+本仓库为CSI+颜色检测提供。新版YOLO检测在https://gitee.com/Why0808/intelligent-competition比赛版本。
+支持CSI和USB相机，支持Orin NX
 
 # 二、飞行前准备
 
