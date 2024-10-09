@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #coding=utf-8
 
 import rospy
@@ -8,7 +8,7 @@ import numpy as np
 import math
 import time
 import threading
-import Tkinter
+import tkinter
 from geometry_msgs.msg import *
 from std_msgs.msg import Float32MultiArray, UInt64
 from std_srvs.srv import Empty
@@ -120,8 +120,8 @@ def call(event):
 def read_kbd_input():
     global is_initialize_rc
     is_initialize_rc = True
-    win = Tkinter.Tk()
-    frame = Tkinter.Frame(win,width=100,height=60)
+    win = tkinter.Tk()
+    frame = tkinter.Frame(win,width=100,height=60)
     frame.bind("<Key>",call)
     frame.focus_set()
     frame.pack()

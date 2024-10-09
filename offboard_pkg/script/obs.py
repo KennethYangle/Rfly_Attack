@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #coding=utf-8
 
 import rospy
@@ -8,7 +8,7 @@ import numpy as np
 import math
 import time
 import threading
-import Tkinter
+import tkinter
 from geometry_msgs.msg import TwistStamped, Quaternion, PoseStamped
 from std_msgs.msg import Float32MultiArray
 from std_srvs.srv import Empty
@@ -18,7 +18,6 @@ from mavros_msgs.srv import SetMavFrame
 from mavros_msgs.msg import State, RCIn, HomePosition, PositionTarget
 from mavros_msgs.msg import Thrust
 from utils_obs import Utils
-from Queue import Queue
 from rflysim_ros_pkg.msg import Obj
 
 
@@ -47,9 +46,6 @@ command.type_mask = PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + Positi
                   + PositionTarget.IGNORE_VX + PositionTarget.IGNORE_VY + PositionTarget.IGNORE_VZ \
                   + PositionTarget.IGNORE_YAW
 
-q = Queue()
-maxQ = 100
-sumQ = 0.0
 home_dx, home_dy = 0, 0
 depth = -1
 original_offset = np.array([0, 0, 0])
@@ -129,8 +125,8 @@ def call(event):
 def read_kbd_input():
     global is_initialize_rc
     is_initialize_rc = True
-    win = Tkinter.Tk()
-    frame = Tkinter.Frame(win,width=100,height=60)
+    win = tkinter.Tk()
+    frame = tkinter.Frame(win,width=100,height=60)
     frame.bind("<Key>",call)
     frame.focus_set()
     frame.pack()

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # @Date    : 2020-02-02 21:01:46
 # @Author  : BrightSoul (653538096@qq.com)
