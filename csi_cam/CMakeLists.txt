@@ -7,6 +7,8 @@ set(UNION_SUBPROJECT_MAJOR_VERSION 0)
 set(UNION_SUBPROJECT_MINOR_VERSION 0)
 set(UNION_SUBPROJECT_PATCH_VERSION 0)
 set(UNION_SUBPROJECT_VERSION ${UNION_SUBPROJECT_MAJOR_VERSION}.${UNION_SUBPROJECT_MINOR_VERSION}.${UNION_SUBPROJECT_PATCH_VERSION})
+SET(cv_bridge_DIR ~/Rfly_Attack/devel/share/cv_bridge/cmake)
+SET(OpenCV_DIR  ~/opencv-4.5.4-D/lib/cmake/opencv4/)
 #编译参数说明：
 # -O 优化等级（0,不做优化 1,默认优化 2，继续优化 数字越大，优化程度越高）
 # -Wall 警告信息全开

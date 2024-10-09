@@ -3,7 +3,8 @@ project(rflysim_sensor_rospkg)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
-
+SET(cv_bridge_DIR ~/Rfly_Attack/devel/share/cv_bridge/cmake)
+SET(OpenCV_DIR  ~/opencv-4.5.4-D/lib/cmake/opencv4/)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
