@@ -10,6 +10,7 @@ vis = VisionCaptureApi.VisionCaptureApi()
 # Send command to UE4 Window 1 to change resolution 
 # vis.sendUE4Cmd(b'r.setres 720x405w',0) # 设置UE4窗口分辨率，注意本窗口仅限于显示，取图分辨率在json中配置，本窗口设置越小，资源需求越少。
 vis.sendUE4Cmd(b't.MaxFPS 30',0) # 设置UE4最大刷新频率，同时也是取图频率
+vis.sendUE4Cmd(b'RflyChangeViewKeyCmd I 1',0) # 设置UE4开启UDP传输
 time.sleep(0.5)    
 vis.sendUE4Cmd(b'r.setres 720x405w',1) # 设置UE4窗口分辨率，注意本窗口仅限于显示，取图分辨率在json中配置，本窗口设置越小，资源需求越少。
 vis.sendUE4Cmd(b't.MaxFPS 30',1) # 设置UE4最大刷新频率，同时也是取图频率
