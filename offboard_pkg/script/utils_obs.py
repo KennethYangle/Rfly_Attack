@@ -66,6 +66,8 @@ class Utils(object):
                              [1,0,0],\
                              [0,1,0]])
         self.n_cc = np.array([0,0,1])
+        self.n_vc = np.array([1,0,0])
+        self.n_hc = np.array([0,1,0])
 
         self.vd = np.array([0, 0, 0], dtype=np.float64)
         self.ko = 2.5 #the angular rate to avoid obstacle
@@ -354,6 +356,114 @@ class Utils(object):
 
         # omega_in_e = m / f_d * np.linalg.pinv(n_f_x).dot(z_3 - 1./m*alpha_2_dot + c_3*z_4)
         omega_in_e = np.linalg.pinv(A).dot(B)
+        omega_in_b = pos_info["mav_R"].T.dot(omega_in_e)
+
+        # return control command
+        return [omega_in_b[0], omega_in_b[1], omega_in_b[2], thrust_d]
+    
+    def PlaneConstraintController(self, pos_info, pos_i, dt, controller_reset):
+        # params
+        m = 1.4
+        g = np.array([[0], [0], [-9.801]], dtype=np.float64)
+        C_d = 0.073
+        thrust_hover = 0.609
+
+        # interceptor and target state
+        mav_pos = pos_info["mav_pos"].reshape(-1, 1)    # 将数组转化为列向量
+        mav_vel = pos_info["mav_vel"].reshape(-1, 1)
+        mav_acc = (mav_vel - self.last_mav_vel) / dt
+        self.last_mav_vel = mav_vel
+        sphere_pos = pos_info["sphere_pos"].reshape(-1, 1)
+        sphere_vel = pos_info["sphere_vel"].reshape(-1, 1)
+        sphere_acc = pos_info["sphere_acc"].reshape(-1, 1)
+
+        # calacute nc,the first idex(c:camera,b:body,e:earth) represent the frmae, the second idex(c,o) represent the camera or obstacle
+        
+        n_v_in_c = self.n_vc.reshape(-1, 1) #Normal vector of the VERTICAL plane in the camera coordinate system
+        n_v_in_b = pos_info["R_cb"].dot(n_v_in_c)
+        n_v_in_e = pos_info["mav_R"].dot(n_v_in_b)
+
+        n_h_in_c = self.n_hc.reshape(-1, 1) #Normal vector of the HORIZONTIAL plane in the camera coordinate system
+        n_h_in_b = pos_info["R_cb"].dot(n_h_in_c)
+        n_h_in_e = pos_info["mav_R"].dot(n_h_in_b)
+        
+        # calacute the no
+        n_t_in_c = np.array([[pos_i[0] - self.u0], [pos_i[1] - self.v0], [self.f]], dtype=np.float64)
+        n_t_in_c /= np.linalg.norm(n_t_in_c)
+        n_t_in_b = pos_info["R_cb"].dot(n_t_in_c)
+        n_t_in_e = pos_info["mav_R"].dot(n_t_in_b)
+
+        # n_td design
+        n_vd_in_e = n_v_in_e
+        n_hd_in_e = n_h_in_e
+
+        # L_1
+        c_1n = 0.5
+        k_h = 0.8 - 0.2   # 记得改成参量相关公式
+        p_r = mav_pos - sphere_pos
+        n_t_in_e_precise = -p_r / np.linalg.norm(p_r)
+        z_1 = n_hd_in_e.T.dot(n_t_in_e)
+        if z_1 >= k_h:
+            z_1 = k_h - 1e-3
+        L_1 = 0.5 * np.log( k_h*k_h / (k_h*k_h - z_1*z_1) )
+        K_h = c_1n * z_1 / (k_h*k_h - z_1*z_1)
+
+        # L_2
+        c_2n = 0.8
+        # k_v = 0.1
+        z_2 = n_vd_in_e.T.dot(n_t_in_e)
+        # if z_2 >= k_v:
+        #     z_2 = k_v - 1e-3
+        L_2 = 0.5*z_2*z_2
+        # print(k_v*k_v / (k_v*k_v - z_2*z_2))
+        # L_2 = 0.5 * np.log( k_v*k_v / (k_v*k_v - z_2*z_2) )
+        # K_v = c_2n * z_2 / (k_v*k_v - z_2*z_2)
+        K_v = c_2n * z_2
+        
+
+        # L_3
+        c_1 = 1.0 #可调参数
+        # c_1 = 3.2 #可调参数
+        z_3 = p_r
+        v_r = mav_vel - sphere_vel
+        # L_2 = 0.5 * z_2.T.dot(z_2)
+        # L_3 = L_1 + L_2 + 0.5 * z_3.T.dot(z_3)
+        L_3 = z_3.T.dot(z_3)
+        # alpha_1 = -c_1 * p_r
+        # alpha_1 = 10 * n_t_in_e_precise
+        alpha_1 = 10 * n_t_in_e
+        # alpha_1 = c_1 * n_t_in_e
+
+        # L_4
+        c_2 = 0.8 #可调参数
+        # c_2 = 1. #可调参数
+        z_4 = v_r - alpha_1
+        f_drag = -C_d * mav_vel.T.dot(mav_vel)
+        L_4 = L_1 + L_2 + 0.5 * z_4.T.dot(z_4)
+        # alpha_2 = -c_2*m*z_3 - m*g - c_1*m*v_r + m*n_t_in_e #- f_drag
+        alpha_2 = -c_2*m*z_4 - m*g - c_1*m*v_r + m*n_t_in_e - K_h*m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_hd_in_e) - K_v*m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_vd_in_e) #假定目标加速度为0
+        # print("eps:", m/np.linalg.norm(p_r)*(-np.identity(3)+n_t_in_e.dot(n_t_in_e.T)).dot(n_td_in_e))
+
+        e_3 = np.array([[0], [0], [1]], dtype=np.float64)
+        n_f = pos_info["mav_R"].dot(e_3)
+        f_d = np.linalg.norm(alpha_2)
+        thrust_d = f_d / m / np.linalg.norm(g) * thrust_hover
+
+        # L_5
+        c_3 = 0.3 
+        z_5 = 1. / m * (f_d * n_f - alpha_2)
+        L_5 = L_4 + z_5.T.dot(z_5)
+
+        a_r = mav_acc - sphere_acc
+        z_3_dot = v_r
+        z_4_dot = f_d/m*n_f + g + c_1*v_r #+ 1./m*f_drag
+        alpha_2_dot = -c_2*m*z_4_dot - c_1*m*a_r - m*z_3_dot# + C_d*mav_vel.T.dot(mav_acc)       #这里还缺两项
+        n_f_x = self.skew(n_f)
+        A = K_h*np.cross(n_t_in_e.T, n_hd_in_e.T) + K_v*np.cross(n_t_in_e.T, n_vd_in_e.T) + f_d / m * z_5.T.dot(n_f_x)
+        B = z_5.T.dot(z_4 - 1./m*alpha_2_dot + c_3*z_5)
+
+        # omega_in_e = m / f_d * np.linalg.pinv(n_f_x).dot(z_3 - 1./m*alpha_2_dot + c_3*z_4)
+        omega_in_e = np.linalg.pinv(A).dot(B) + K_h*np.cross(n_t_in_e.T, n_hd_in_e.T).T + K_v*np.cross(n_t_in_e.T, n_vd_in_e.T).T
         omega_in_b = pos_info["mav_R"].T.dot(omega_in_e)
 
         # return control command
