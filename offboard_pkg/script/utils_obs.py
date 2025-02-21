@@ -398,8 +398,8 @@ class Utils(object):
         n_hd_in_e = n_h_in_e
 
         # L_1
-        c_1n = 0.5
-        k_h = 0.8 - 0.2   # 记得改成参量相关公式
+        c_1n = 0.3
+        k_h = 0.8 - 0.1   # 记得改成参量相关公式
         p_r = mav_pos - sphere_pos
         n_t_in_e_precise = -p_r / np.linalg.norm(p_r)
         z_1 = n_hd_in_e.T.dot(n_t_in_e)
@@ -409,7 +409,7 @@ class Utils(object):
         K_h = c_1n * z_1 / (k_h*k_h - z_1*z_1)
 
         # L_2
-        c_2n = 0.8
+        c_2n = 1.2
         # k_v = 0.1
         z_2 = n_vd_in_e.T.dot(n_t_in_e)
         # if z_2 >= k_v:
@@ -450,7 +450,7 @@ class Utils(object):
         thrust_d = f_d / m / np.linalg.norm(g) * thrust_hover
 
         # L_5
-        c_3 = 0.3 
+        c_3 = 1.8 
         z_5 = 1. / m * (f_d * n_f - alpha_2)
         L_5 = L_4 + z_5.T.dot(z_5)
 

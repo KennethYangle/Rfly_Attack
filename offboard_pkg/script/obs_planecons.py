@@ -44,9 +44,18 @@ idle_command = TwistStamped()
 # sphere_vel = np.array([-5., 1., 2.], dtype=np.float64)
 # sphere_acc = np.array([0., 0., 0.], dtype=np.float64)
 
-sphere_pos = np.array([20., 55., 20.], dtype=np.float64)
-sphere_vel = np.array([-3., -1., 2.], dtype=np.float64)
+sphere_pos = np.array([0., 55., 5.], dtype=np.float64)
+sphere_vel = np.array([0., 2., 1.5], dtype=np.float64)
 sphere_acc = np.array([0., 0., 0.], dtype=np.float64)
+t = 0.
+x_amplitude = 20.
+x_frequency = 0.018
+
+y_amplitude = 20.
+y_frequency = 0.018
+
+z_amplitude = 20.
+z_frequency = 0.02
 
 
 def spin():
@@ -143,6 +152,7 @@ def pos_image_ekf_cb(msg):
         pos_i = pos_i_ekf
     else:
         pos_i = pos_i_raw
+    #-------------------------------------------#
     # print("pos_i_ekf: {}".format(pos_i_ekf))
     # print("pos_i: {}".format(pos_i))
 
@@ -157,6 +167,51 @@ def sphere_control(dt, is_move=False):
     sphere_vel = sphere_vel + sphere_acc * dt * is_move
     obj_msg.position.x = sphere_pos[0]
     obj_msg.position.y = sphere_pos[1]
+    obj_msg.position.z = sphere_pos[2]
+    obj_msg.size.x = 0.2
+    obj_msg.size.y = 0.2
+    obj_msg.size.z = 0.2
+
+    sphere_pub.publish(obj_msg)
+
+def sphere_control2(dt, is_move=False):
+    """
+    更新质点的位置，控制其在三维轨迹上运动
+
+    参数：
+    dt : float
+        时间变化量
+    x_amplitude : float
+        x方向往复运动的幅度
+    x_frequency : float
+        x方向往复运动的频率
+    y_movement : float
+        y方向直线运动的大小
+    z_movement : float
+        z方向直线运动的大小
+    """
+    global sphere_pos, t, sphere_vel , x_amplitude, x_frequency
+    obj_msg = Obj()
+    obj_msg.id = 100
+    obj_msg.type = 152
+
+    y_movement = sphere_vel[1]
+    z_movement = sphere_vel[2]
+
+    # 更新x方向的往复运动（正弦运动）
+    x_n = sphere_pos[0] + x_amplitude * is_move * np.sin(2 * np.pi * x_frequency * t)
+    # 更新y方向的直线运动
+    # sphere_pos[1] = sphere_pos[1] + y_movement * dt * is_move
+    y_n = sphere_pos[1] + y_amplitude * is_move * (1 + np.sin(2 * np.pi * y_frequency * t - np.pi / 2))
+    # 更新z方向的直线运动
+    sphere_pos[2] = sphere_pos[2] + z_movement * dt * is_move
+    # z_n = sphere_pos[2] + z_amplitude * is_move * (1 + np.sin(2 * np.pi * z_frequency * t - np.pi / 2))
+
+    t = t + dt * is_move
+    obj_msg.position.x = x_n
+    obj_msg.position.y = y_n
+    # obj_msg.position.y = sphere_pos[1]
+    # obj_msg.position.z = z_n
     obj_msg.position.z = sphere_pos[2]
     obj_msg.size.x = 0.2
     obj_msg.size.y = 0.2
@@ -275,7 +330,7 @@ if __name__=="__main__":
         time_now = rospy.Time.now().to_sec()
         dt = time_now - time_last
         if MODE == "Simulation":
-            sphere_control(dt=dt, is_move=(ch8==1))
+            sphere_control2(dt ,is_move=(ch8==1))
         time_last = time_now
 
         if MODE == "Simulation":
