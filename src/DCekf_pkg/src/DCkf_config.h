@@ -1,0 +1,19 @@
+#ifndef __DCKF_CONFIG_H
+#define __DCKF_CONFIG_H
+
+#include <Eigen/Core>
+
+#define IMU_FREQ 50.0
+#define IMU_DT (1.0/IMU_FREQ)
+
+#define ACC_NOISE_DENSITY 2.86
+#define GYRO_NOISE_DENSITY 1.87e-03
+#define OMEGA_NOISE_DENSITY 1.87e-03
+#define IMG_NOISE_DENSITY 1.87e-03
+#define ACC_BIAS_WALK 2.66e-05
+#define GYRO_BIAS_WALK 2.66e-05
+#define IMG_RANDOM_WALK 2.66e-03
+#define GPS_POS_NOISE_DENSITY 17.0
+#define GPS_VEL_NOISE_DENSITY 0.01
+
+#endif
