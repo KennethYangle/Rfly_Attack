@@ -23,8 +23,8 @@ public:
     typedef std::deque<StateVector, Eigen::aligned_allocator<StateVector>> StateBuffer;
     typedef std::deque<StateCov, Eigen::aligned_allocator<StateCov>> CovBuffer;
 
-    static const int BUFFER_SIZE = 100;
-    static const int DELAY_STEPS = 3;
+    static const int BUFFER_SIZE = 200;
+    static const int DELAY_STEPS = 10;
 
     eskf kf;
 
